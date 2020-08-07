@@ -16,7 +16,7 @@ def modules(request):
     return render(request, 'modules.html')
 
 def algebra(request):
-    return render(request, 'algebra.html')
+    return render(request, 'templates/algebra.html')
 
 
 

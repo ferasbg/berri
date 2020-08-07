@@ -21,8 +21,8 @@ export default class Login extends React.Component {
                     <title>Sign Up for Berri</title>
                 </head> */}
                 <div className="titleHead">
-                    <h1>Go Berri</h1>
-                    <p>Join the ever-increasing market of high school tutors today</p>
+                    <h1>Berri</h1>
+                    <p>Problem-Solving Doesn't Have to Be So Complicated While at Home. Introducing, Berri.</p>
                 </div>
                 <div className="app topSpace">
                     <div className="container__signup">
