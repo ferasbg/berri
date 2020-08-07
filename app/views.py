@@ -14,6 +14,7 @@ def index(request):
     # render categories and problem_sets under modules
 
 # tutor_portals 
+    # allow user to navigate for tutors and filter based on category
     # prompt for category specification
     # display active tutor users
     # store created users in SQL
