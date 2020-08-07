@@ -11,9 +11,20 @@ def index(request):
     return render(request, 'index.html')
 
 # modules
+
+def modules(request):
+    return render(request, 'modules.html')
+
+def algebra(request):
+    return render(request, 'algebra.html')
+
+
+
+    # ../modules.html (display categories: 'geometry', 'algebra', 'precalculus', 'calculus')
+    # ../algebra.html (render all category pages)
     # render categories and problem_sets under modules
 
-# tutor_portals 
+# tutor_portals
     # allow user to navigate for tutors and filter based on category
     # prompt for category specification
     # display active tutor users
@@ -27,6 +38,6 @@ def index(request):
 
 # Build and implement confidence-based algorithm, for every 1 instance of completion {onSubmit} => {launch popup that collects user confidence ranked via 0-5}
 # Scrape all problem sets for K-12 level mathematics that are high-signal, convert questions into problem sets (0/12), similar to KhanAcademy
-# Ask for user’s time availability to schedule learning, and also allow the user to focus on weaker problem types after assessing their baseline. 
+# Ask for user’s time availability to schedule learning, and also allow the user to focus on weaker problem types after assessing their baseline.
 # Weaker problem types will be prioritized in rank order based on results from popups
 # Scale of distribution of matches for users (within classroom, then district, then region, then country)
