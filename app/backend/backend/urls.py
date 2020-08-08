@@ -1,3 +1,18 @@
+from django.contrib import admin
+from django.urls import path, include
+
+# router.register(r'users', views.UserViewSet)
+# router.register(r'modules', views.ModulesViewSet)
+# router.register(r'multiplayer', views.MultiplayerViewSet)
+# router.register(r'dashboard', views.DashboardViewSet)
+# router.register(r'profile', views.ProfileViewSet)
+# router.register(r'tutors', views.TutorViewSet)
+# need to hook router.urls to urlpatterns
+
+urlpatterns = [
+    path('admin/', admin.site.urls)
+]
+
 """backend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,9 +28,3 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-]

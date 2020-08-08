@@ -6,10 +6,10 @@ from django.db import models
     # model = Module
     # fields = ['user', 'categories', 'units', 'progress', 'performance_metrics']
 
-# Math(models.Model)
+# Exams(models.Model)
     # class = Meta:
-        # model = Math
-        # fields = ['user', 'questions', 'startTime', 'endTime', 'completion', 'confidence_score' ]
+        # model = Exams
+        # fields = ['user', 'question', 'choices', 'startTime', 'endTime', 'completion', 'confidence_score' ]
         # queryset = rank next exam given confidence_score
         # permission_classes = [permissions.AllowAny]
     # storing all data in JSON
