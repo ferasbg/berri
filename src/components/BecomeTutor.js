@@ -1,6 +1,5 @@
 
 import React from 'react';
-import "./style.module.css"
 
 export default class BecomeTutor extends React.Component {
 

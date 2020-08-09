@@ -1,7 +1,5 @@
 import React from 'react';
 
-import styles from "./style.module.css"
-
 export default class Login extends React.Component {
 
     render () {

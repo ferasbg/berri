@@ -1,0 +1,290 @@
+.row {
+    display: flex;
+}
+
+.box-1 {
+    flex: 1;
+}
+
+.box-2 {
+    flex: 5;
+}
+
+.box-3 {
+    flex: 1;
+}
+
+.box-4 {
+    flex: 5;
+}
+
+.imageSection {
+    position: relative;
+    background-image: linear-gradient(-140deg, rgb(252, 116, 116), rgb(253, 158, 145), rgb(253, 233, 145));
+    box-shadow: 0 5px 10px rgba(59, 59, 59, 0.23);
+}
+
+.circleCrop {
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.verticalAlign {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#prof {
+    position: absolute;
+    top: 2.5%;
+    bottom: 0;
+    left: 2.5%;
+    right: 0;
+    width: 95%;
+    height: 95%;
+    /* border: 6px solid #ffffff; */
+}
+
+.overlay {
+    position: absolute;
+    top: 2.5%;
+    bottom: 0;
+    left: 2.5%;
+    right: 0;
+    width: 95%;
+    height: 95%;
+
+    cursor: pointer;
+    background: rgba(87, 87, 87, 0.342);
+    opacity: 0;
+}
+
+#pfpText {
+    position: absolute;
+    top: 45%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    height: 5px;
+
+    color: rgba(255, 255, 255, 0.87);
+    text-align: center;
+}
+
+#newPfpForm input {
+    all: unset;
+}
+
+.section {
+    background: white;
+    position: relative;
+    box-shadow: 0 5px 10px rgba(59, 59, 59, 0.23);
+    border-radius: 10px;
+}
+
+#headerSection {
+    height: auto;
+    padding: 30px;
+}
+
+.heading {
+    font-weight: 800;
+    margin: 0;
+}
+
+.imgContainer {
+    margin: 0;
+    background: rgb(253, 145, 145);
+    cursor: pointer;
+
+    text-align: center;
+}
+
+.imgContainer img {
+    transform: translateY(20%);
+    width: 60%;
+    height: 70%;
+}
+
+#noContent {
+    background: rgba(177, 177, 177, 0.23);
+    border-radius: 10px;
+    height: 300px;
+    padding: 45px;
+    text-align: center;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.profile-p {
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: 200;
+    margin-bottom: 0;
+}
+
+#noContent p {
+    color: rgba(87, 87, 87, 0.23);
+    font-weight: 600;
+    font-size: 25px;
+}
+
+#becomeTutor {
+    background: rgb(253, 145, 145);
+    border-radius: 5px;
+    width: auto;
+    margin: 0;
+    line-height: 280%;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px 10px 20px;
+}
+
+#yesContent {
+    background: white;
+    border-radius: 10px;
+    height: auto;
+    padding: 0;
+    text-align: left;
+}
+
+#yourSubjects {
+    font-weight: 800;
+}
+
+#subjects {
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#subjects div {
+    font-weight: 800;
+    color: rgba(172, 170, 170, 0.466);
+    /* white-space: nowrap; */
+}
+
+#status {
+    font-weight: 800;
+}
+
+#toggleStatus .button {
+    box-shadow: unset;
+}
+
+#toggleStatus input[type='submit'] {
+    background: rgb(253, 145, 145);
+    color: white;
+}
+
+h3 {
+    display: inline-block;
+    position: relative;
+    margin: 5px;
+    padding: 10px;
+    font-weight: 300;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 7px;
+}
+
+h4 {
+    margin: 0;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+
+    height: auto;
+}
+
+.col-1 {
+    width: 100%;
+}
+
+.col-2 {
+    width: 100%;
+}
+
+.dropdown {
+    width: 90%;
+    margin: 0;
+}
+
+.greyBubble {
+    background: rgba(247, 247, 247, 0.699);
+    color: rgba(121, 120, 120, 0.699);
+    border-radius: 10px;
+    font-weight: 200;
+    border: 0;
+}
+
+#chooseSubject {
+    width: 100%;
+    margin: 0;
+}
+
+::placeholder {
+    color: rgba(173, 172, 172, 0.699);
+}
+
+#chooseSubject:hover {
+    background-color: #f3f3f3;
+}
+
+#dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    margin-top: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover #dropdownContent {
+    display: block;
+}
+
+#dropdownContent a {
+    display: block;
+    background: unset;
+    color: unset;
+    padding: 8px 0;
+    padding-left: 20px;
+    text-align: unset;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#dropdownContent a:hover {
+    background-color: #f1f1f1;
+}
+
+#subjectForm input[type=submit] {
+    display: inline-block;
+    width: 10%;
+    height: auto;
+    padding: 0;
+}
+
+#searchEmails {
+    width: 40%;
+}
+
+#fixedButton {
+    position: fixed;
+    border-radius: 28px;
+    margin: auto;
+    left: 20px;
+    bottom: 20px;
+}
