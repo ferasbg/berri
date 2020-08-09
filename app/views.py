@@ -22,6 +22,9 @@ def modules(request):
     return render(request, 'modules.html')
 
 # render page that renders views for all of the API requests (arithmetic || core.py)
+# def training(request):
+#    return render(request, 'arithmetic.html', {'exams': exams})
+
 
 # tutor_portals
     # allow user to navigate for tutors and filter based on category
