@@ -1,0 +1,13 @@
+"problem_types" {
+    "arithmetic" {
+        "difficulty": "Beginner" {
+        
+        }
+        "difficulty": "Intermediate" {
+
+        }
+        "difficulty": "Advanced" {
+
+        }
+    }
+}
