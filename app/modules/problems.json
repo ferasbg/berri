@@ -1,13 +1,15 @@
-"problem_types" {
-    "arithmetic" {
-        "difficulty": "Beginner" {
-        
-        }
-        "difficulty": "Intermediate" {
-
-        }
-        "difficulty": "Advanced" {
-
+{
+    "problem_types" {
+        "arithmetic" {
+            "Beginner" {
+                "confidence_score": "value"
+            },
+            "Intermediate" {
+                "confidence_score": "value"
+            },
+            "Advanced" {
+                "confidence_score": "value"
+            }
         }
     }
 }
