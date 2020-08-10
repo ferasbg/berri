@@ -3,30 +3,3 @@
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
-/* text input (textarea) */
-text-area {
-    resize: none;
-    margin-top: 50px!important;
-}
-
-/* update bulma global variables */
-
-/* override bulma */
-#avon-heading {
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-    align-self: center;
-    font-weight: 400;
-    align-content: center;
-}
-
-#avon-description {
-    text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
-    align-self: center;
-    font-weight: lighter;
-    align-content: center;
-}
-
-#url_form {
-    margin-top: 25px;
