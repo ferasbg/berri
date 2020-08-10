@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'webpack_loader',
     'backend',
-    'bulma'
+    'bulma',
+    'pipeline'
 ]
 
 MIDDLEWARE = [
@@ -121,7 +123,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = 'avon/static'
+STATIC_ROOT = 'app/static'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'dist/',
+        'STATS_FILE': os.path.join(BASE_DIR, 'webpack-stats.json'),
+    }
+}

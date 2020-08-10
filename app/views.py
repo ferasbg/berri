@@ -60,7 +60,7 @@ def training(request):
             # exams['choices'] = response['choices']
     
         # when user wants to hit /modules/training (arithmetic) module, then perform api calls and then render the JSON into tabs)
-        return render(request, '../templates/arithmetic.html', {'exams': exams})
+        return render(request, '../templates/arithmetic.html')
 
     # make sqlite connection so you can pass JSON to be stored into pandas dataframe and then into SQLite Database
         # get templates working first

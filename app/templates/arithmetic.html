@@ -1,3 +1,6 @@
+{% load static %}
+<!-- {% load render_bundle from webpack_loader %} -->
+
 <!DOCTYPE html>
 <html lang="en"xmlns:mml="http://www.w3.org/1998/Math/MathML">
 <head>
@@ -40,6 +43,18 @@
           },
         };
     </script>
+    <script>
+      function toMathML(jax,callback) {
+        var mml;
+        try {
+          mml = jax.root.toMathML("");
+        } catch(err) {
+          if (!err.restart) {throw err} // an actual error
+          return MathJax.Callback.After([toMathML,jax,callback],err.restart);
+        }
+        MathJax.Callback(callback)(mml);
+      }
+    </script>
     <!-- mathjax -->
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
@@ -69,12 +84,14 @@
     <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
+    
 </head>
 
 <body>
     <title>Arithmetic</title>
-    <!-- import sample problem_sets -->
-</body>
+
+
+  </body>
 
 </html>
 

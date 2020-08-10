@@ -3,6 +3,9 @@ from django.urls import path, include
 from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.conf import settings
+# from .app import views
+
+
 
 # router.register(r'users', views.UserViewSet)
 # router.register(r'modules', views.ModulesViewSet)
@@ -13,7 +16,13 @@ from django.conf import settings
 # need to hook router.urls to urlpatterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls)
+    # path('/', views.index, name='index'),,
+    # path('/modules/', views.modules, name='modules'),
+    # path('/tutors/', views.tutors, name='tutors'),
+    # path('/dashboard/', views.dashboard, name='dashboard'),
+    # path('/multiplayer/', views.multiplayer, name='multiplayer'),
+    # path('/about', views.about, name='about')
     # path('/', views.index, name='index')
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
