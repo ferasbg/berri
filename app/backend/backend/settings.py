@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'webpack_loader',
     'backend',
-    'bulma',
-    'pipeline'
+    'bulma'
 ]
 
 MIDDLEWARE = [
