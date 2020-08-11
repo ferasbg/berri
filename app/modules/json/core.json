@@ -1,5 +1,5 @@
 {
-    "question_id": 1, 
+    "question" 
         {
             "choices" [
                 "a": 49, 
@@ -7,6 +7,15 @@
                 "c": 52, 
                 "d": 48, 
                 "e": 33
-            ]
+            ],
+            "question_id": 1,
+            "correct_choice": "char",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Intermediate",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
         }
 }

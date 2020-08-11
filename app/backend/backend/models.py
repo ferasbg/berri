@@ -26,7 +26,7 @@ class Modules(models.model):
     start_time = models.DateField(datetime.time())
     end_time = models.DateField()
     # # compute session_time based on delta of end_time and start_time
-    session_duration = models.TimeField()
+    session_time = models.TimeField()
     correct_choice = models.BooleanField()
     confidence_score = models.Integerfield(blank=true)
     # track instance of problem completion
