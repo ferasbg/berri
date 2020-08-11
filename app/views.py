@@ -24,6 +24,9 @@ from django.http import JsonResponse
 
 # todo: import model serializers
 # todo: write out Viewset classes for each component
+# todo: setup APIView for each custom view for each component
+
+# chores: convert mathml to json object, store in sqlite3, port to sqlite3, add JSON setup to Pandas.dataframe
 
 
 # landing page
