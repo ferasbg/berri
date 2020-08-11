@@ -28,7 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Defining Application(s)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,10 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # integration
     'rest_framework',
     'webpack_loader',
+    # core
     'backend',
-    'bulma'
+    'bulma',
+    # models
 ]
 
 MIDDLEWARE = [

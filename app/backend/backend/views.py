@@ -1,4 +1,4 @@
-# base 
+# base
 import re
 import base64
 import io
@@ -17,7 +17,7 @@ import numpy as np
 # rendering
 from django.shortcuts import render, redirect, render_to_response
 
-# json(dependencies)
+# json
 import jsonify
 import json, urllib
 from django.http import JsonResponse
@@ -25,9 +25,7 @@ from django.http import JsonResponse
 # todo: import model serializers
 # todo: write out Viewset classes for each component
 # todo: setup APIView for each custom view for each component
-
-# chores: convert mathml to json object, store in sqlite3, port to sqlite3, add JSON setup to Pandas.dataframe
-
+# todo: store JSON objects in sqlite3, port to sqlite3, add JSON setup to Pandas.dataframe, render integer from DB as server-side LaTeX
 
 # landing page
 def index(request):
@@ -38,45 +36,49 @@ def modules(request):
     return render(request, 'modules.html')
 
 # modules/training (gateway for problem_sets)
-def training(request):
-    if request.method == 'GET':
+# def training(request):
+    # perform all computations given instance of GET request (no Viewsets or APIView for now)
+    # if request.method == 'GET':
         # make api request to pandas to access dataframe to get dict for questions, return=1
-        
+
         # render latex equations from JSON strings that had been converted from mathjax
-        
+
         # store JSON in pandas.dataframe, then store pandas.dataframe in SQLite
 
         # to add confidence_score && user_xp, use pandas.DataFrame.apply()
 
         # let's store our JSON first, then prepare it for server-side rendering (template)
-        
+
         # store JSON from API call, and then pass JSON as python object
 
         # pull from database that stores JSON to be rendered in template
-        
+
         # pass dict from JSON for server-side rendering w template
             #init
             # question = []
-            # choices = [] 
+            # choices = []
             # exams = {}
             # exams['question'] = response['question']
             # exams['choices'] = response['choices']
-    
-        # when user wants to hit /modules/training (arithmetic) module, then perform api calls and then render the JSON into tabs)
-        return render(request, '../templates/arithmetic.html')
 
-    # make sqlite connection so you can pass JSON to be stored into pandas dataframe and then into SQLite Database
-        # get templates working first
-        # pandas.DataFrame.to_sql()
-        # sqlite.connection()
+        # when user wants to hit /modules/training (arithmetic) module, then perform api calls and then render the JSON into tabs)
+        # return render(request, 'arithmetic.html')
+
+
+
+# wrap computations in function to handle pulling and adding JSON data through pandas.dataframe
+# make sqlite connection so you can pass JSON to be stored into pandas dataframe and then into SQLite Database
+    # get templates working first
+    # pandas.DataFrame.to_sql()
+    # sqlite.connection()
 
 # dashboard
     # pull analytics from pandas.dataframe which calls SQLite (stored JSON) and convert to matplotlib graphs
     # graph / plot:
-        # estimated time of mastery, 
-        # # of total correct questions solved, 
-        # # of matches won, 
-        # # of minutes spent on average per question, 
+        # estimated time of mastery,
+        # # of total correct questions solved,
+        # # of matches won,
+        # # of minutes spent on average per question,
         # total xp (computed in respect to session_time, confidence_score, and if response['answer'] === form passed through template to backend)
     # def dashboard(request):
     # return render(request, 'dashboard.html')
@@ -85,7 +87,7 @@ def training(request):
     # hit SQLite to pass JSON as python objects to be rendered as server-side template
     # simulate competition by rendering progress bar with PC competitor
     # feature request: setup CRUD properties to allow users to CRUD their own problem_sets
-    # feature request: setup public / private sessions 
+    # feature request: setup public / private sessions
 
 
 # tutors
@@ -100,7 +102,7 @@ def training(request):
 
 # profile
     # user can access settings / notifications page to personalize their settings
-    # if request.method == 'GET': profile_pic = request.FILE['myfile'] (user can upload profile picture)   
+    # if request.method == 'GET': profile_pic = request.FILE['myfile'] (user can upload profile picture)
 
 
 # Build and implement confidence-based algorithm, for every 1 instance of completion {onSubmit} => {launch popup that collects user confidence ranked via 0-5}

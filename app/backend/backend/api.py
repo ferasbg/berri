@@ -24,19 +24,6 @@ for i in range(r):
     print(response)
 # let's put filtered json response to be parsed with json.parse() (already with converted mathml strings)
 
-#print(problems)
-    
-    
-    
-
-
-
-
-
-
-
-
-
 
 # function to extract key / values from JSON into dicts that can be rendered as plaintext
     #def customProblemDecoder(problemDict):
