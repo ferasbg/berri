@@ -47,7 +47,7 @@ def multiplayer(request):
 def about(request):
     return render(request, "about.html")
 
-# modules/training (gateway for problem_sets)
+# modules/training (gateway for problem_sets) = render arithmetic.html
 # def training(request):
     # perform all computations given instance of GET request (no Viewsets or APIView for now)
     # if request.method == 'GET':

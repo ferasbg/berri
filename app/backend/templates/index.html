@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- import external CSS stylesheets -->
     <meta charset="utf-8">
-    <meta name="description" content="Berri is an intelligent memory retention tool designed to make math engaging for students at home.">
+    <meta name="description" content="Berri is an intelligent memory retention tool designed to make mathematics engaging for remote learning.">
     <meta name="keywords" content="Multiplayer Brainscape, Confidence-Based Repetition, Gamification, EduTech">
     <meta name="author" content="berri">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- download bulma and load into static -->
-    <link rel="stylesheet" href="{% static 'backend/static/bulma-css/bulma-divider.min.css' %}" type="text/css">
-    <link rel="stylesheet" href="{% static 'backend/static/bulma-css/bulma-switch.min.css' %}" type="text/css"> 
-    <link rel="stylesheet" href="{% static 'backend/static/bulma-css/bulma.min.css' %}" type="text/css"> 
+    <!-- load main.js that stores extra .js functionality in /static -->
+    <link rel="stylesheet" href="{% static '/bulma-css/bulma-switch.min.css' %}" type="text/css"> 
+    <link rel="stylesheet" href="{% static '/bulma-css/bulma.min.css' %}" type="text/css">  
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="{% static '/css/main.css' %}" type="text/css">  -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -24,6 +23,44 @@
 </head>
 
 <body>
-    <h1 class="title">Welcome to Berri</h1>    
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <!-- navbar-brand = top-left navbar component -->
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                Berri
+                <!-- <img src="/static/berri.png" alt="berri_logo"> -->
+            </a>
+        </div>
+
+        <div id="berri-navbar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#modules">
+                    Enter Training Gateway
+                </a>
+                
+                <a class="navbar-item" href="#tutor-portals">
+                    Find Personalized Tutors
+                </a>
+                <a class="navbar-item" href="#multiplayer">Join Game</a>
+            </div>
+            <div class="navbar-end">
+                <a class="navbar-item" href="#download-whitepaper">
+                    Download Whitepaper
+                </a>
+                <a class="navbar-item" href="#about">
+                    About
+                        <!-- Meet the Team -->
+                        <!-- Our Story -->
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="field">
+            <h1 class="title is-1 has-text-centered is-spaced" id="berri-heading">Welcome to Berri</h1>
+            <h3 class="subtitle is-3 has-text-centered is-spaced" id="berri-description">Berri is an intelligent memory retention tool, or in other words, the missing half of Brainscape and Khan Academy.</h3>
+        </div>  
+    </div> 
 </body>
 </html>

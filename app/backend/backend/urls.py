@@ -23,9 +23,7 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('multiplayer/', views.multiplayer, name='multiplayer'),
     path('about/', views.about, name='about')
-    # path('/', views.index, name='index')
-] 
-# + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 """backend URL Configuration
 
