@@ -11,6 +11,9 @@
 ## System Architecture
 - Standard MVC (Model-View-Controller)
 - Confidence-Based Repetition Algorithm
+- Object-Relational Mapping
 
-## User Stories
-- if the user wants to save the problem if they want to bring it up with a tutor, we will need a page to access “Flagged Questions” under /tutors/tutor_portals.html we would have to save that instance as well to load it in the Flagged Questions section
+## Future Work
+- OCR to scan problem_sets and then import to `/modules` in order for user to setup public match and for personal training
+- randomization for problems imported from OCR or direct user input to automatically simulate test conditions
+

@@ -29,11 +29,23 @@ from django.http import JsonResponse
 
 # landing page
 def index(request):
-    return render(request, 'index.html')
+    return render(request, "index.html")
 
 # modules
 def modules(request):
-    return render(request, 'modules.html')
+    return render(request, "modules.html")
+
+def tutors(request):
+    return render(request, "tutors.html")
+
+def dashboard(request):
+    return render(request, "dashboard.html")
+
+def multiplayer(request):
+    return render(request, "multiplayer.html")
+
+def about(request):
+    return render(request, "about.html")
 
 # modules/training (gateway for problem_sets)
 # def training(request):

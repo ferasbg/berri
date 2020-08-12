@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'webpack_loader',
     # core
     'backend',
+    # 'modules',
+    # 'multiplayer',
+    # 'tutors',
     'bulma',
     # models
 ]
@@ -61,7 +64,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["templates"],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
