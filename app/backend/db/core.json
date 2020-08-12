@@ -7,6 +7,7 @@
             "d": "48", 
             "e": "33"
         }],
+        "question": "22 - (10 + 13)",
         "question_id": 1,
         "correct_choice": "char",
         "user_answer_choice": "char",

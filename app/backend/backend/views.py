@@ -106,7 +106,6 @@ def modules(request):
 
 
 # Build and implement confidence-based algorithm, for every 1 instance of completion {onSubmit} => {launch popup that collects user confidence ranked via 0-5}
-# Scrape all problem sets for K-12 level mathematics that are high-signal, convert questions into problem sets (0/12), similar to KhanAcademy
 # allow the user to focus on weaker problem types after assessing their baseline given confidence_score, accuracy, and assessing what problems must be returned in rank order of priority (in respect to weaker problem types)
 # Weaker problem types will be prioritized in rank order based on results from popups
 # Scale of distribution of matches for users (within classroom, then district, then region, then country)
