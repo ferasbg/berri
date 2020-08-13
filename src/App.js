@@ -14,7 +14,8 @@ export default class App extends React.Component {
       <BrowserRouter>
         <div className="App">
             <Switch>
-              <Route path="/" component={Login} exact/>
+              <Route path="/" component={Profile} exact/>
+              <Route path="/login" component={Login} exact/>
               <Route path="/signup" component={Home} exact/>
               <Route path="/profile" component={Profile} exact/>
               <Route path="/tutor-profile" component={TutorProfile} exact/>

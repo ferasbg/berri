@@ -1,9 +1,26 @@
 import React from 'react';
-import { GoogleLogin } from 'react-google-login';
+import { connect } from 'react-redux';
+import { signIn } from '../store/actions/authActions';
+import GoogleBtn from './GoogleBtn';
+import { Redirect } from 'react-router-dom';
 
+class Login extends React.Component {
+    state = {}
 
-export default class Login extends React.Component {
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.signIn(this.state);
+    }
+
     render () {
+        const { auth } = this.props;
+        if (auth.uid) return <Redirect to='/profile' /> 
         return (
             <div>
                 <div className="titleHead">
@@ -12,18 +29,12 @@ export default class Login extends React.Component {
                 </div>
                 <div className="app topSpace">
                     <div className="container__signup">
-                        <form id="signupformA" action="loginAuth" method="post">
-                            <div className="form-group"><label for="email">Email</label><br/><input className="form-control" id="email" type="text" name="email" placeholder="Email Address" required=""/></div>
-                            <div className="form-group"><label for="password">Password</label><br/><input className="form-controlawdawd" id="password" type="password" name="password" placeholder="Password" required=""/></div>
+                        <form id="signupformA" onSubmit={this.handleSubmit} >
+                            <div className="form-group"><label>Email</label><br/><input className="form-control" id="email" onChange={this.handleChange} type="text" name="email" placeholder="Email Address" required=""/></div>
+                            <div className="form-group"><label>Password</label><br/><input className="form-controlawdawd" id="password" onChange={this.handleChange} type="password" name="password" placeholder="Password" required=""/></div>
                             <div className="button in-line" id="login"><input type="submit" value="Login"/></div>
-                            <GoogleLogin
-                                clientId="787660474330-srqgc8h2jbt1tuicaqrk023lpd4ai1d9.apps.googleusercontent.com"
-                                buttonText="Login"
-                                onSuccess={this.onSignIn}
-                                onFailure={this.onSignIn}
-                                cookiePolicy={'single_host_origin'}
-                            />
-                            <p>Don't have an account? <a href="/signup">Sign up now!</a></p>
+                            <GoogleBtn />
+                            <p>Don't have an account? <a className="login-link" href="/signup">Sign up now!</a></p>
                         </form>
                     </div>
                 </div>
@@ -31,3 +42,17 @@ export default class Login extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        signIn: (creds) => dispatch(signIn(creds))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

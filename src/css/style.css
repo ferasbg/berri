@@ -22,6 +22,13 @@ body {
   font-size: 50px;
 }
 
+.signin-error {
+  all: unset;
+  color: rgb(253, 145, 145);
+  font-size: 20px;
+  bottom: 10px;
+}
+
 .app {
   background: rgb(253, 145, 145);
   height: auto;
@@ -83,6 +90,10 @@ select {
   width: 90%;
 }
 
+#signUpFormA div:last-of-type {
+  margin-right: 20px;
+}
+
 .form-control {
   border-top: 0;
   border-right: 0;
@@ -142,24 +153,21 @@ input[type=password] {
   cursor: pointer;
 }
 
+.login-link {
+  text-decoration: underline;
+  color: rgb(23, 23, 248);
+}
+
 .in-line {
   display: inline-block;
   vertical-align: middle;
-}
-
-.top-right {
-  display: inline-block;
-  vertical-align: right;
+  margin-right: 20px;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: border-box;
-}
-
-.g-signin2 {
-  margin-left: 20px;
 }
 
 
