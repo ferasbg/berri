@@ -124,8 +124,10 @@
   </nav>
   <h1 class="title">Arithmetic</h1>
   <!-- pass python dict to be rendered in template -->
-  <h4>{% for question_1, question in questions %}</h4>
-    <a>{{ question_1.question }}</a>
+  <!-- pass question 1-10, setup tabs in frontend -->
+  <h4>{% for key, value in questions %}</h4>
+    <a>{{ question_value }}</a>
+    {% endfor %}
   <!-- dictionary lookup in django template tag  -->
   <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and  
     they are
@@ -139,6 +141,7 @@
 
 <!-- track session_time with startTime on instance of GET request, and when the last question gets submitted -->
 <!-- will have to display datetime.datetime.now() for multiplayer -->
+
 <!-- setup sqlite with pandas dataframe -->
 <!-- setup routes with templates by looking at folder structure of avon -->
 <!-- convert JSON to dict object, render in html template -->

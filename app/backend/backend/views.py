@@ -47,12 +47,9 @@ def arithmetic(request):
     # for now, render the page itself first
     return render(request, "arithmetic.html")
     # perform all computations given instance of GET request 
-    if request.method == 'GET':
-        # make random form instance for placeholder operation
-        form = URLForm()
-        # core functions
-            # retrieve questions, and choices
-            # startTime=TRUE (start time to track session_time)
+        # retrieve questions, and choices
+        
+        # startTime=TRUE (start time to track session_time)
         
         # make api request to pandas to access dataframe to get dict for questions, return=1
 
@@ -62,19 +59,10 @@ def arithmetic(request):
 
         # to add confidence_score && user_xp, use pandas.DataFrame.apply()
 
-        # let's store our JSON first, then prepare it for server-side rendering (template)
 
-        # store JSON from API call, and then pass JSON as python object
 
-        # pull from database that stores JSON to be rendered in template
+        # pull from JSON objects stored as python dicts
 
-        # pass dict from JSON for server-side rendering w template
-            #init
-            # question = []
-            # choices = []
-            # exams = {}
-            # exams['question'] = response['question']
-            # exams['choices'] = response['choices']
 
 
 
