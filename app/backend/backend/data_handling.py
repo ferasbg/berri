@@ -13,6 +13,7 @@ import pandas as pd
 import nested_lookup
 from nested_lookup import nested_lookup
 import sqlite3
+# pandas.dataframe --> JSON --> python dict
 # store JSON with pandas.dataFrame(), vice versa 
 # write all functions to handle data (user input, computations on user input, read / write / insert changes to db) all in here, refactor code to perform computations under each view instance that interacts with JSON data stored in pandas.dataframe
 # need to setup interactions with pandas.dataframe in order to read / write / add insertions to it based on specific event instances
@@ -41,15 +42,24 @@ with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf
     # convert JSON objects['questions.question_number.question', 'questions.question_number.choices'] into python dicts because we are pulling these two name / value pairs to be rendered in base template 
     
     # convert main dataframe back into python dicts to be rendered as strings in base template
-    problems_dict = problems_df.to_dict(orient="index")
-    print(problems_dict)
+    # problems_dict = problems_df.to_dict(orient="index")
+    # print(problems_dict)
 
+
+# hit JSON to get python dict, but ONLY read to pandas.dataframe to add insertions
+
+with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+    # store as JSON object
+    questions_dict = json.loads(f.read(), strict=False) 
     # search for question['value'] for each question stored in nested python dict to render as string
     # search for dict that matches question_1.question['value'] and return as string
-    question_dict_to_string = nested_lookup(key='question', document=problems_dict) 
-    print(question_dict_to_string)
-    
-    # nested_update to make changes to nested dict, which then is stored to pandas.dataframe
+    question_value = questions_dict["questions"]["question_1"]["question"]
+    print(question_value)
+    # pass question_value into django template
+
+
+
+
 
     # for interation loop defined in views.py, based on specific instance, make changes to pandas.dataframe
     # python dictionary must be rendered in base template  

@@ -87,38 +87,46 @@
     <script type="text/javascript" id="MathJax-script" async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
-    <script>
-      var problems = pd.read_json({
-        "question_1": {
-            "choices": [{
-                "a": "6", 
-                "b": "-1", 
-                "c": "1", 
-                "d": "-23", 
-                "e": "32"
-            }],
-            "question": "22 - (10 + 13)",
-            "question_id": 1,
-            "correct_choice": "char",
-            "user_answer_choice": "char",
-            "confidence_score": "integer",
-            "difficulty": "Intermediate",
-            "category": "Arithmetic",
-            "startTime": "time_value",
-            "endTime": "time_value",
-            "session_time": "time_value"
-        }
-      })
-    </script>    
 </head>
 
 <body>
-    <h1 class="title">Multiplayer</h1>
-    <!-- wrap django {{JSON string object of equation converted to python object being passed to be rendered through base template}} to bypass hardcoding option in order to maintain scale -->
-    <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and  
-      they are
-      $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-      <!-- <p class="question">$${{% var python_object %}}$$</p> -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <!-- navbar-brand = top-left navbar component -->
+    <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+            Berri
+            <!-- <img src="/static/berri.png" alt="berri_logo">
+            logo should be math + fruit -->
+        </a>
+    </div>
+
+    <div id="berri-navbar" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="{% url 'dashboard' %}">
+                Dashboard
+            </a>
+            <a class="navbar-item" href="{% url 'modules' %}">
+                Enter Training Gateway
+            </a>
+            <a class="navbar-item" href="{% url 'tutors' %}">
+                Find Tutors
+            </a>
+            <a class="navbar-item" href="{% url 'multiplayer'}">Join Game</a>
+        </div>
+        <!-- <div class="navbar-end">
+            <a class="navbar-item" href="{url 'https://github.com/RomirS/Berri/blob/POC-1/README.md'}">
+                Download Whitepaper
+            </a> -->
+            <a class="navbar-item" href="{% url 'about' %}">About</a>
+        </div>
+    </div>
+  </nav>
+  <h1 class="title">Multiplayer</h1>
+  <!-- wrap django {{JSON string object of equation converted to python object being passed to be rendered through base template}} to bypass hardcoding option in order to maintain scale -->
+  <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and  
+    they are
+    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+    <!-- <p class="question">$${{% var python_object %}}$$</p> -->
 
 </body>
 

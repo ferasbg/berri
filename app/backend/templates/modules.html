@@ -1,3 +1,6 @@
+{% load static %}
+<!-- {% load render_bundle from webpack_loader %} -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +24,42 @@
     <script src="https://kit.fontawesome.com/66634f6c24.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <!-- navbar-brand = top-left navbar component -->
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                Berri
+                <!-- <img src="/static/berri.png" alt="berri_logo">
+                logo should be math + fruit -->
+            </a>
+        </div>
+
+        <div id="berri-navbar" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="{% url 'dashboard' %}">
+                    Dashboard
+                </a>
+                <a class="navbar-item" href="{% url 'modules' %}">
+                    Enter Training Gateway
+                </a>
+                <a class="navbar-item" href="{% url 'tutors' %}">
+                    Find Tutors
+                </a>
+                <a class="navbar-item" href="{% url 'multiplayer'}">Join Game</a>
+            </div>
+            <!-- <div class="navbar-end">
+                <a class="navbar-item" href="{url 'https://github.com/RomirS/Berri/blob/POC-1/README.md'}">
+                    Download Whitepaper
+                </a> -->
+                <a class="navbar-item" href="{% url 'about' %}">About</a>
+            </div>
+        </div>
+    </nav>
     <title>Modules</title>
+    <ul class="field">
+        <li class="arithmetic-link"><a href="{% url 'arithmetic' %}">Arithmetic</a></li>
+    </ul>
+    <!-- render each category in modules as box, same style as tutor_portals -->
     <!-- CSS grid / flexbox containers for rendering boxes for each category (modules.html) -->
     
 </body>

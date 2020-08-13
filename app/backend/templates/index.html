@@ -35,26 +35,22 @@
 
         <div id="berri-navbar" class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="#dashboard">
+                <a class="navbar-item" href="{% url 'dashboard' %}">
                     Dashboard
                 </a>
-                <a class="navbar-item" href="#modules">
+                <a class="navbar-item" href="{% url 'modules' %}">
                     Enter Training Gateway
                 </a>
-                <a class="navbar-item" href="#tutor-portals">
+                <a class="navbar-item" href="{% url 'tutors' %}">
                     Find Tutors
                 </a>
-                <a class="navbar-item" href="#multiplayer">Join Game</a>
+                <a class="navbar-item" href="{% url 'multiplayer'}">Join Game</a>
             </div>
-            <div class="navbar-end">
-                <a class="navbar-item" href="#download-whitepaper">
+            <!-- <div class="navbar-end">
+                <a class="navbar-item" href="{url 'https://github.com/RomirS/Berri/blob/POC-1/README.md'}">
                     Download Whitepaper
-                </a>
-                <a class="navbar-item" href="#about">
-                    About
-                        <!-- Meet the Team -->
-                        <!-- Our Story -->
-                </a>
+                </a> -->
+                <a class="navbar-item" href="{% url 'about' %}">About</a>
             </div>
         </div>
     </nav>

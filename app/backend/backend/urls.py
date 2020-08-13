@@ -16,13 +16,14 @@ from backend import views
 # need to hook router.urls to urlpatterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('modules/', views.modules, name='modules'),
+    path('arithmetic/', views.arithmetic, name='arithmetic'),
     path('tutors/', views.tutors, name='tutors'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('multiplayer/', views.multiplayer, name='multiplayer'),
     path('about/', views.about, name='about')
+    # path('admin/', admin.site.urls)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 """backend URL Configuration

@@ -43,7 +43,9 @@ def about(request):
     return render(request, "about.html")
 
 # modules/training (gateway for problem_sets) = render arithmetic.html
-def training(request):
+def arithmetic(request):
+    # for now, render the page itself first
+    return render(request, "arithmetic.html")
     # perform all computations given instance of GET request 
     if request.method == 'GET':
         # make random form instance for placeholder operation
@@ -51,9 +53,7 @@ def training(request):
         # core functions
             # retrieve questions, and choices
             # startTime=TRUE (start time to track session_time)
-
-
-        return render(request, "arithmetic.html")
+        
         # make api request to pandas to access dataframe to get dict for questions, return=1
 
         # render latex equations from JSON strings that had been converted from mathjax
