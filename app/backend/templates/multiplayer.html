@@ -113,26 +113,13 @@
 </head>
 
 <body>
-    <h1 class="title">Arithmetic</h1>
+    <h1 class="title">Multiplayer</h1>
     <!-- wrap django {{JSON string object of equation converted to python object being passed to be rendered through base template}} to bypass hardcoding option in order to maintain scale -->
     <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and  
       they are
       $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
-      <!-- <p class="question">$${{% python_object = make call to return JSON object stored in pandas dataframe, convert to python object so we then render python object in template as a string that gets rendered as LaTeX with $$ $$ tags %}}$$</p> -->
+      <!-- <p class="question">$${{% var python_object %}}$$</p> -->
 
 </body>
 
 </html>
-
-<!-- json.dumps() to serialize an array -->
-<!-- template tags to use -->
-  <!-- {% block %} -->
-  <!-- figure out how to match given answer in form and JSON char value -->
-  <!-- track session_time with startTime on instance of GET request, and when the last question gets submitted -->
-  <!-- will have to display datetime.datetime.now() for multiplayer -->
-  <!-- {{value|first = 'a'}}, {{value|second = 'b'}}, {{value|third = 'c'}}, {{value|last = 'd'}} -->
-
-<!-- setup sqlite with pandas dataframe -->
-<!-- setup routes with templates by looking at folder structure of avon -->
-<!-- convert JSON to dict object, render in html template -->
-<!-- pass user form response (in the form of multiple choice) and match correct answer choice with given ['correct_choice'] -->

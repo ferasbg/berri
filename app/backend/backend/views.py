@@ -22,11 +22,6 @@ import jsonify
 import json, urllib
 from django.http import JsonResponse
 
-# todo: import model serializers
-# todo: write out Viewset classes for each component
-# todo: setup APIView for each custom view for each component
-# todo: store JSON objects in sqlite3, port to sqlite3, add JSON setup to Pandas.dataframe, render integer from DB as server-side LaTeX
-
 # landing page
 def index(request):
     return render(request, "index.html")
@@ -48,9 +43,17 @@ def about(request):
     return render(request, "about.html")
 
 # modules/training (gateway for problem_sets) = render arithmetic.html
-# def training(request):
-    # perform all computations given instance of GET request (no Viewsets or APIView for now)
-    # if request.method == 'GET':
+def training(request):
+    # perform all computations given instance of GET request 
+    if request.method == 'GET':
+        # make random form instance for placeholder operation
+        form = URLForm()
+        # core functions
+            # retrieve questions, and choices
+            # startTime=TRUE (start time to track session_time)
+
+
+        return render(request, "arithmetic.html")
         # make api request to pandas to access dataframe to get dict for questions, return=1
 
         # render latex equations from JSON strings that had been converted from mathjax
@@ -73,8 +76,6 @@ def about(request):
             # exams['question'] = response['question']
             # exams['choices'] = response['choices']
 
-        # when user wants to hit /modules/training (arithmetic) module, then perform api calls and then render the JSON into tabs)
-        # return render(request, 'arithmetic.html')
 
 
 

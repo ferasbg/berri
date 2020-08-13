@@ -1,21 +1,214 @@
 {
-    "question_1": {
-        "choices": [{
-            "a": "6", 
-            "b": "-1", 
-            "c": "1", 
-            "d": "-23", 
-            "e": "32"
-        }],
-        "question": "22 - (10 + 13)",
-        "question_id": 1,
-        "correct_choice": "char",
-        "user_answer_choice": "char",
-        "confidence_score": "integer",
-        "difficulty": "Intermediate",
-        "category": "Arithmetic",
-        "startTime": "time_value",
-        "endTime": "time_value",
-        "session_time": "time_value"
+    "questions": {
+        "question_1": {
+            "choices": [{
+                "a": "6", 
+                "b": "-1", 
+                "c": "1", 
+                "d": "-23", 
+                "e": "32"
+            }],
+            "question": "22 - (10 + 13)",
+            "question_id": 1,
+            "correct_choice": "char",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Intermediate",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+        },
+
+        "question_2": {
+            "choices": [{
+                "a": "1", 
+                "b": "1/14", 
+                "c": "43 1/2", 
+                "d": "7/13", 
+                "e": "3 1/8"
+            }],
+            "question": "7 / (8 + 5)",
+            "question_id": 2,
+            "correct_choice": "7/13",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Intermediate",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+
+            
+        },
+
+        "question_3": {
+            "choices": [{
+                "a": "24", 
+                "b": "32", 
+                "c": "15", 
+                "d": "8", 
+                "e": "6"
+            }],
+            "question": "2 * 4",
+            "question_id": 3,
+            "correct_choice": "8",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Beginner",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+
+            
+        },
+
+        "question_4": {
+            "choices": [{
+                "a": "4", 
+                "b": "12", 
+                "c": "6", 
+                "d": "60", 
+                "e": "45"
+            }],
+            "question": "9 * 5",
+            "question_id": 1,
+            "correct_choice": "45",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Beginner",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+
+            
+        },
+
+        "question_5": { 
+            "choices": [{
+                "a": "4", 
+                "b": "6", 
+                "c": "3", 
+                "d": "12", 
+                "e": "5"
+            }],
+            "question": "30/6",
+            "question_id": 5,
+            "correct_choice": "5",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Beginner",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+
+        },
+        "question_6": {
+            "choices": [{
+                "a": "35", 
+                "b": "6", 
+                "c": "15", 
+                "d": "0", 
+                "e": "14"
+            }],
+            "question": "11 - 5",
+            "question_id": 6,
+            "correct_choice": "6",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Beginner",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+            
+        },
+
+        "question_7": {
+            "choices": [{
+                "a": "12", 
+                "b": "20", 
+                "c": "0", 
+                "d": "39", 
+                "e": "15"
+            }],
+            "question": "2 - (2 - 12)",
+            "question_id": 7,
+            "correct_choice": "12",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Intermediate",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+
+        },
+
+        "question_8": {
+            "choices": [{
+                "a": "14", 
+                "b": "20", 
+                "c": "28", 
+                "d": "96", 
+                "e": "182"
+            }],
+            "question": "5 * 4",
+            "question_id": 8,
+            "correct_choice": "20",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Beginner",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+
+            
+        },
+
+        "question_9": {
+            "choices": [{
+                "a": "55", 
+                "b": "44", 
+                "c": "32", 
+                "d": "69", 
+                "e": "50"
+            }],
+            "question": "1 x 2 + 6 x 8",
+            "question_id": 9,
+            "correct_choice": "50",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Advanced ",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+
+        },
+
+        "question_10": {
+            "choices": [{
+                "a": "60", 
+                "b": "12", 
+                "c": "108", 
+                "d": "160", 
+                "e": "6"
+            }],
+            "question": "(4 - 1) * (3 - 1)",
+            "question_id": 10,
+            "correct_choice": "6",
+            "user_answer_choice": "char",
+            "confidence_score": "integer",
+            "difficulty": "Advanced",
+            "category": "Arithmetic",
+            "startTime": "time_value",
+            "endTime": "time_value",
+            "session_time": "time_value"
+        }
     }
 }

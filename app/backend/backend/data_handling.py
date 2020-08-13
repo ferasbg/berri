@@ -8,61 +8,39 @@ import re
 import base64
 from collections import namedtuple
 import io
-import pandas 
+import pandas
 import pandas as pd
 import sqlite3
-# store operations with pandas.dataFrame() and SQLite database
-# then migrate code to perform computations under each view instance
+# store JSON with pandas.dataFrame() and SQLite database
+# write all functions to handle data (user input, computations on user input, read / write / insert changes to db) all in here, refactor code to perform computations under each view instance that interacts with JSON data stored in pandas.dataframe
 
-# make sure that pandas can read in JSON data
-data = pd.read_json(path_or_buf="/home/ferasbg/projects/Berri/app/backend/db/data/core.json")
+with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+    # store as JSON object
+    data = json.loads(f.read(), strict=False)
+    # store JSON as pandas.dataframe
+    data = pd.DataFrame(data)
+    # display entire dataframe
+    pd.set_option('display.max_colwidth', None)
+    # normalize / flatten nested JSON in dataframe (parent_node=["questions"]), also need to set path for each question_number (1-n)
+    df = pd.json_normalize(data["questions"])
+    print(df)
+    # we need to store the nested JSON (choices) as it's own dataframe
+    choices_data = pd.json_normalize(data=data['questions'], record_path=['choices'])
+    choices_df = choices_data.head()
+    print(choices_df)
 
-df = pd.DataFrame({
-    "question_1": {
-        "choices": [{
-            "a": "49", 
-            "b": "10", 
-            "c": "52", 
-            "d": "48", 
-            "e": "33"
-        }],
-        "question_id": 1,
-        "correct_choice": "char",
-        "user_answer_choice": "char",
-        "confidence_score": "integer",
-        "difficulty": "Intermediate",
-        "category": "Arithmetic",
-        "startTime": "time_value",
-        "endTime": "time_value",
-        "session_time": "time_value"
-    },
-    "question_2": {
-        "choices": [{
-            "a": "49", 
-            "b": "10", 
-            "c": "52", 
-            "d": "48", 
-            "e": "33"
-        }],
-        "question_id": 1,
-        "correct_choice": "char",
-        "user_answer_choice": "char",
-        "confidence_score": "integer",
-        "difficulty": "Intermediate",
-        "category": "Arithmetic",
-        "startTime": "time_value",
-        "endTime": "time_value",
-        "session_time": "time_value"
-    }
-})
+    # need to setup interactions with pandas.dataframe in order to read / write / add insertions to it based on specific event instances
 
-print(df)
-
-# store JSON in pandas.dataframe
+    # specify path for nested JSON objects through . notation in order to read dataframe and access dict objects
+    # df = pd.json_normalize(data["questions"], record_path="questions")
+    # pass in json_normalize: 
+        # record_path=question, choices
+        # max_level=4
+        # metadata=id, question_number, category, difficulty)
+    # save pandas.dataframe as python dict
+    # data = df.to_dict(data)
+ 
+ 
 
 
-# need to read JSON stored in pandas dataframe
 
-# (pandas.DataFrame.to_json) = convert pandas dataframe to JSON, then convert JSON object to pythond dict that can be rendered through KaTeX
-
-# handle database insertions with pandas.dataframe()

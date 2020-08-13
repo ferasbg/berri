@@ -22,27 +22,14 @@ r = 10
 for i in range(r):
     response = requests.get(full_url, headers=headers, data={}).json()
     print(response)
-# let's put filtered json response to be parsed with json.parse() (already with converted mathml strings)
 
-
-# function to extract key / values from JSON into dicts that can be rendered as plaintext
-    #def customProblemDecoder(problemDict):
-    #        return namedtuple('X', problemDict.keys())(*problemDict.values())
-    ## problem_type = json.loads(response, object_hook=customProblemDecoder)
-    ## print(problem.question, problem.choices, problem.correct_choice, problem.confidence_score)
-
-
-# create models / serializers to store JSON objects as python django model objects (ref: https://docs.djangoproject.com/en/3.0/topics/db/models/)
-# import JSON objects to be converted into python objects
-
+# store JSON objects as python dict objects 
 # parse json into python dict object with attributes corresponding to dict keys
 
 # init
 question = []
 choices = []
 
-# pass dict from JSON for server-side rendering w template
-# store JSON objects (with equations converted as mathml strings) as python dict objects and store as django models
 
 # exams are just the problem_sets (must store this in django models)
 exams = {}
@@ -50,7 +37,6 @@ exams['question'] = response['question']
 exams['choices'] = response['choices']
 
 
-# setup request.Session() in order to provide default data to request methods, setup cookies for sessions (store metadata)
 
 
 # return render(request, 'arithmetic.html', {'exams': exams})
