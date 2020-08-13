@@ -10,7 +10,7 @@
             }],
             "question": "22 - (10 + 13)",
             "question_id": 1,
-            "correct_choice": "char",
+            "correct_choice": "-1",
             "user_answer_choice": "char",
             "confidence_score": "integer",
             "difficulty": "Intermediate",
@@ -73,7 +73,7 @@
                 "e": "45"
             }],
             "question": "9 * 5",
-            "question_id": 1,
+            "question_id": 4,
             "correct_choice": "45",
             "user_answer_choice": "char",
             "confidence_score": "integer",
