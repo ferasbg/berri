@@ -122,16 +122,15 @@
         </div>
     </div>
   </nav>
-  <h1 class="title">Arithmetic</h1>
+  <h1 class="title is-3">Arithmetic</h1>
   <!-- pass python dict to be rendered in template -->
   <!-- pass question 1-10, setup tabs in frontend -->
-  <h4>{% for key, value in questions %}</h4>
-    <a>{{ question_value }}</a>
-    {% endfor %}
+  
+  <p>$${% firstof question_value %}$$</p>
   <!-- dictionary lookup in django template tag  -->
-  <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and  
+  <!-- <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and  
     they are
-    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p> -->
     <!-- make call to return JSON object stored in pandas dataframe, convert to python object so we then render python object in template as a string that gets rendered as LaTeX with $$ $$ tags -->
 
 </body>

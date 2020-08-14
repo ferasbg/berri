@@ -1,10 +1,5 @@
 import React from 'react';
 
-<<<<<<< HEAD
-=======
-import styles from "./style.module.css"
-
->>>>>>> POC-1
 export default class Login extends React.Component {
 
     render () {

@@ -13,6 +13,8 @@ import pandas
 import pandas as pd
 import matplotlib
 import numpy as np
+import requests
+import nested_lookup
 
 # rendering
 from django.shortcuts import render, redirect, render_to_response
@@ -21,10 +23,19 @@ from django.shortcuts import render, redirect, render_to_response
 import jsonify
 import json, urllib
 from django.http import JsonResponse
+from urllib.request import urlopen
+from json import JSONEncoder
+from collections import namedtuple, OrderedDict, defaultdict
+
+# db
+import sqlite3
 
 # landing page
 def index(request):
     return render(request, "index.html")
+
+def login(request):
+    return render(request, "login.html")
 
 # modules
 def modules(request):
@@ -44,8 +55,30 @@ def about(request):
 
 # modules/training (gateway for problem_sets) = render arithmetic.html
 def arithmetic(request):
-    # for now, render the page itself first
-    return render(request, "arithmetic.html")
+    with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+        # store as JSON object
+        data = json.loads(f.read(), strict=False)
+        # store JSON as pandas.dataframe
+        data = pd.DataFrame(data)
+        # display entire dataframe
+        pd.set_option('display.max_colwidth', None)
+        # normalize / flatten nested JSON in dataframe (parent_node=["questions"]), also need to set path for each question_number (1-n)
+        problems_df = pd.json_normalize(data["questions"])
+        print(problems_df)
+        # we need to store the nested JSON (choices) as it's own dataframe
+        choices_data = pd.json_normalize(data=data['questions'], record_path=['choices'])
+        choices_df = choices_data.head()
+        pd.set_option('display.max_colwidth', None)
+        print(choices_df)
+
+    # get question from dict object that was converted from pandas.dataframe
+    with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+        # store as JSON object
+        questions_dict = json.loads(f.read(), strict=False) 
+        # search for dict that matches question_1.question['value'] and return as string
+        question_value = questions_dict["questions"]["question_1"]["question"]
+    
+    return render(request, "arithmetic.html", {'question_value': question_value})
     # perform all computations given instance of GET request 
         # retrieve questions, and choices
         

@@ -59,8 +59,6 @@ with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf
 
 
 
-
-
     # for interation loop defined in views.py, based on specific instance, make changes to pandas.dataframe
     # python dictionary must be rendered in base template  
     # store python dict in variable and then do dict lookup and then render the output
