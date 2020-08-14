@@ -1,0 +1,133 @@
+{% load static %}
+<!-- {% load render_bundle from webpack_loader %} -->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+    <!-- import external CSS stylesheets -->
+    <meta charset="utf-8">
+    <meta name="description" content="Berri is an intelligent memory retention tool designed to make math engaging for students at home.">
+    <meta name="keywords" content="Multiplayer Brainscape, Confidence-Based Repetition, Gamification, EduTech, Real-Time Browser LaTeX">
+    <meta name="author" content="berri">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- download bulma and load into static -->
+    <link rel="stylesheet" href="{% static '/bulma' %}" type="text/css">
+    <!-- load main.js that stores extra .js functionality in /static -->
+    <link rel="stylesheet" href="{% static '/bulma-css/bulma-switch.min.css' %}" type="text/css"> 
+    <link rel="stylesheet" href="{% static '/bulma-css/bulma.min.css' %}" type="text/css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static '../css/main.css' %}" type="text/css"> 
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/66634f6c24.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js" integrity="sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=" crossorigin="anonymous"></script>
+    <!-- mathML -->
+    <script type="math/mml"></script>
+    <!-- katex -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+    <script>
+        window.WebFontConfig = {
+          custom: {
+            families: ['KaTeX_AMS', 'KaTeX_Caligraphic:n4,n7', 'KaTeX_Fraktur:n4,n7',
+              'KaTeX_Main:n4,n7,i4,i7', 'KaTeX_Math:i4,i7', 'KaTeX_Script',
+              'KaTeX_SansSerif:n4,n7,i4', 'KaTeX_Size1', 'KaTeX_Size2', 'KaTeX_Size3',
+              'KaTeX_Size4', 'KaTeX_Typewriter'],
+          },
+        };
+    </script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+         tex2jax: { inlineMath: [["$","$"],["\\(","\\)"]] },
+         "HTML-CSS": {
+           linebreaks: { automatic: true, width: "container" }          
+         }              
+      });
+   </script>
+    <script>
+      function toMathML(jax,callback) {
+        var mml;
+        try {
+          mml = jax.root.toMathML("");
+        } catch(err) {
+          if (!err.restart) {throw err} // an actual error
+          return MathJax.Callback.After([toMathML,jax,callback],err.restart);
+        }
+        MathJax.Callback(callback)(mml);
+      }
+    </script>
+    <!-- mathjax -->
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script src="mathjax-config.js" defer></script>
+    <script type="text/javascript" id="MathJax-script" defer
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script src="load-mathjax.js" async></script>
+    <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+</head>
+
+<body>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <!-- navbar-brand = top-left navbar component -->
+    <div class="navbar-brand">
+        <a class="navbar-item" href="#">
+            Berri
+            <!-- <img src="/static/berri.png" alt="berri_logo">
+            logo should be math + fruit -->
+        </a>
+    </div>
+
+    <div id="berri-navbar" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="{% url 'dashboard' %}">
+                Dashboard
+            </a>
+            <a class="navbar-item" href="{% url 'modules' %}">
+                Enter Training Gateway
+            </a>
+            <a class="navbar-item" href="{% url 'tutors' %}">
+                Find Tutors
+            </a>
+            <a class="navbar-item" href="{% url 'multiplayer'}">Join Game</a>
+        </div>
+        <!-- <div class="navbar-end">
+            <a class="navbar-item" href="{url 'https://github.com/RomirS/Berri/blob/POC-1/README.md'}">
+                Download Whitepaper
+            </a> -->
+            <a class="navbar-item" href="{% url 'about' %}">About</a>
+        </div>
+    </div>
+  </nav>
+  <h1 class="title">Multiplayer</h1>
+  <!-- wrap django {{JSON string object of equation converted to python object being passed to be rendered through base template}} to bypass hardcoding option in order to maintain scale -->
+  <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and  
+    they are
+    $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+    <!-- <p class="question">$${{% var python_object %}}$$</p> -->
+
+</body>
+
+</html>

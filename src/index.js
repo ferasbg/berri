@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+<<<<<<< HEAD
 import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './store/reducers/rootReducer';
 import { Provider } from 'react-redux';
@@ -25,6 +26,12 @@ ReactDOM.render(
     <Provider store={store}>
       <App />
     </Provider>
+=======
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+>>>>>>> POC-1
   </React.StrictMode>,
   document.getElementById('root')
 );
