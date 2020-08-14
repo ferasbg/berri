@@ -62,16 +62,14 @@ def about(request):
 
 # modules/training (gateway for problem_sets) = render arithmetic.html
 def arithmetic(request):
-    if request.method = 'GET':
-        
-
-    #if request.method == 'GET':
-        # track startTime and mark endTime when user submits question 10 with datetime, calculate delta between endTime and startTime
-        # if statements for event instances
-            # save_for_tutor = save id based on save_for_tutor instance, and then index question that matches id
-            # database insertions to pandas.dataframe with pandas.dataframe.apply() = user_xp, est_mastery_time, confidence_score, saved_for_tutor, problem_completion, user_accuracy_instance_count
-        # store db insertions in pandas.dataframe
-
+    return render(request, 'arithmetic.html')
+    
+def benchmark_test(request):
+    # partition computation in benchmark_test view and practice_test view
+    if request.method == 'GET':
+        print("hello")
+    
+    # normalize JSON objects stored in pandas.dataframe
     with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
         # store as JSON object
         data = json.loads(f.read(), strict=False)
@@ -104,18 +102,26 @@ def arithmetic(request):
         question_9 = questions_dict["questions"]["question_9"]["question"]
         question_10 = questions_dict["questions"]["question_10"]["question"]
 
-    # get all answer choices
+    # get all answer choices (retrieve all choices for each question)
     with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
         # store as JSON object
         questions_dict = json.loads(f.read(), strict=False) 
 
-        
         # question_1
+        # convert every answer_choice from int (stored in dict) as string to render into django template as str
         # template tag: {{% firstof question_number_choice = object that stores each integer %}}
         q1_choices_a = questions_dict["questions"]["question_1"]["choices"][0]["a"]
+        q1_a = str(q1_choices_a)
+
         q1_choices_b = questions_dict["questions"]["question_1"]["choices"][1]["b"]
+        # render as string to be passed in django template
+        q1_b = str(q1_choices_b)
+
         q1_choices_c = questions_dict["questions"]["question_1"]["choices"][2]["c"]
+        q1_c = str(q1_choices_c)
+
         q1_choices_d = questions_dict["questions"]["question_1"]["choices"][3]["d"]
+        q1_d = str(q1_choices_d)
 
         # question_2
         q2_choices_a = questions_dict["questions"]["question_2"]["choices"][0]["a"]
@@ -126,55 +132,72 @@ def arithmetic(request):
         # question_3
         q3_choices_a = questions_dict["questions"]["question_3"]["choices"][0]["a"]
         q3_choices_b = questions_dict["questions"]["question_3"]["choices"][1]["b"]
-        q3_choices_c = questions_dict["questions"]["question_3"]["choices"][2]["b"]
-        q3_choices_d = questions_dict["questions"]["question_3"]["choices"][3]["b"]
+        q3_choices_c = questions_dict["questions"]["question_3"]["choices"][2]["c"]
+        q3_choices_d = questions_dict["questions"]["question_3"]["choices"][3]["d"]
 
         # question_4
         q4_choices_a = questions_dict["questions"]["question_4"]["choices"][0]["a"]
         q4_choices_b = questions_dict["questions"]["question_4"]["choices"][1]["b"]
-        q4_choices_c = questions_dict["questions"]["question_4"]["choices"][2]["b"]
-        q4_choices_d = questions_dict["questions"]["question_4"]["choices"][3]["b"]
+        q4_choices_c = questions_dict["questions"]["question_4"]["choices"][2]["c"]
+        q4_choices_d = questions_dict["questions"]["question_4"]["choices"][3]["d"]
 
         # question_5
         q5_choices_a = questions_dict["questions"]["question_5"]["choices"][0]["a"]
         q5_choices_b = questions_dict["questions"]["question_5"]["choices"][1]["b"]
-        q5_choices_c = questions_dict["questions"]["question_5"]["choices"][2]["b"]
-        q5_choices_d = questions_dict["questions"]["question_5"]["choices"][3]["b"]
+        q5_choices_c = questions_dict["questions"]["question_5"]["choices"][2]["c"]
+        q5_choices_d = questions_dict["questions"]["question_5"]["choices"][3]["d"]
 
         # question_6
         q6_choices_a = questions_dict["questions"]["question_6"]["choices"][0]["a"]
         q6_choices_b = questions_dict["questions"]["question_6"]["choices"][1]["b"]
-        q6_choices_c = questions_dict["questions"]["question_6"]["choices"][2]["b"]
-        q6_choices_d = questions_dict["questions"]["question_6"]["choices"][3]["b"]
+        q6_choices_c = questions_dict["questions"]["question_6"]["choices"][2]["c"]
+        q6_choices_d = questions_dict["questions"]["question_6"]["choices"][3]["d"]
 
         # question_7
         q7_choices_a = questions_dict["questions"]["question_7"]["choices"][0]["a"]
         q7_choices_b = questions_dict["questions"]["question_7"]["choices"][1]["b"]
-        q7_choices_c = questions_dict["questions"]["question_7"]["choices"][2]["b"]
-        q7_choices_d = questions_dict["questions"]["question_7"]["choices"][3]["b"]
+        q7_choices_c = questions_dict["questions"]["question_7"]["choices"][2]["c"]
+        q7_choices_d = questions_dict["questions"]["question_7"]["choices"][3]["d"]
 
         # question_8
         q8_choices_a = questions_dict["questions"]["question_8"]["choices"][0]["a"]
         q8_choices_b = questions_dict["questions"]["question_8"]["choices"][1]["b"]
-        q8_choices_c = questions_dict["questions"]["question_8"]["choices"][2]["b"]
-        q8_choices_d = questions_dict["questions"]["question_8"]["choices"][3]["b"]
+        q8_choices_c = questions_dict["questions"]["question_8"]["choices"][2]["c"]
+        q8_choices_d = questions_dict["questions"]["question_8"]["choices"][3]["d"]
 
         # question_9
         q9_choices_a = questions_dict["questions"]["question_9"]["choices"][0]["a"]
         q9_choices_b = questions_dict["questions"]["question_9"]["choices"][1]["b"]
-        q9_choices_c = questions_dict["questions"]["question_9"]["choices"][2]["b"]
-        q9_choices_d = questions_dict["questions"]["question_9"]["choices"][3]["b"]
+        q9_choices_c = questions_dict["questions"]["question_9"]["choices"][2]["c"]
+        q9_choices_d = questions_dict["questions"]["question_9"]["choices"][3]["d"]
 
         # question_10
         q10_choices_a = questions_dict["questions"]["question_10"]["choices"][0]["a"]
         q10_choices_b = questions_dict["questions"]["question_10"]["choices"][1]["b"]
-        q10_choices_c = questions_dict["questions"]["question_10"]["choices"][2]["b"]
-        q10_choices_d = questions_dict["questions"]["question_10"]["choices"][3]["b"]
-
-    return render(request, "arithmetic.html", {'question_1': question_1, 'question_2': question_2, 'question_3': question_3, 'question_4': question_4, 'question_5': question_5, 'question_6': question_6, 'question_7': question_7, 'question_8': question_8, 'question_9': question_9, 'question_10': question_10}, {})
+        q10_choices_c = questions_dict["questions"]["question_10"]["choices"][2]["c"]
+        q10_choices_d = questions_dict["questions"]["question_10"]["choices"][3]["d"]
+    return render(request, 'benchmark_test.html', {'question_1': question_1, 'question_2': question_2, 'question_3': question_3, 'question_4': question_4, 'question_5': question_5, 'question_6': question_6, 'question_7': question_7, 'question_8': question_8, 'question_9': question_9, 'question_10': question_10})    
     
 
+def practice_test(request):
+    # normalize JSON objects stored in pandas.dataframe
+    with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+        # store as JSON object
+        data = json.loads(f.read(), strict=False)
+        # store JSON as pandas.dataframe
+        data = pd.DataFrame(data)
+        # display entire dataframe
+        pd.set_option('display.max_colwidth', None)
+        # normalize / flatten nested JSON in dataframe (parent_node=["questions"]), also need to set path for each question_number (1-n)
+        problems_df = pd.json_normalize(data["questions"])
+        print(problems_df)
+        # we need to store the nested JSON (choices) as it's own dataframe
+        choices_data = pd.json_normalize(data=data['questions'], record_path=['choices'])
+        choices_df = choices_data.head()
+        pd.set_option('display.max_colwidth', None)
+        print(choices_df)
 
+    return render(request, 'practice_test.html')
 
 
 

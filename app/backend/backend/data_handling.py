@@ -55,11 +55,13 @@ with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf
     # search for question['value'] for each question stored in nested python dict to render as string
     # search for dict that matches question_1.question['value'] and return as string
     question_value = questions_dict["questions"]["question_1"]["question"]
-    q1_choices = questions_dict["questions"]["question_1"]["choices"][0]["a"]
-    print(q1_choices)
+    q1_choices_a = questions_dict["questions"]["question_1"]["choices"][0]["a"]
+    q1_string_a = str(q1_choices_a)
+    print(q1_string_a)
+    
     # pass question_value into django template
 
-
+    
 
     # for interation loop defined in views.py, based on specific instance, make changes to pandas.dataframe
     # python dictionary must be rendered in base template  

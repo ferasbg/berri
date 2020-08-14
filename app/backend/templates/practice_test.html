@@ -1,5 +1,4 @@
 {% load static %}
-<!-- {% load render_bundle from webpack_loader %} -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,15 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- import external CSS stylesheets -->
     <meta charset="utf-8">
-    <meta name="description" content="Berri is an intelligent memory retention tool designed to make math engaging for students at home.">
+    <meta name="description" content="Berri is an intelligent memory retention tool designed to make mathematics engaging for remote learning.">
     <meta name="keywords" content="Multiplayer Brainscape, Confidence-Based Repetition, Gamification, EduTech">
     <meta name="author" content="berri">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- download bulma and load into static -->
     <!-- load main.js that stores extra .js functionality in /static -->
     <link rel="stylesheet" href="{% static '/bulma-css/bulma-switch.min.css' %}" type="text/css"> 
     <link rel="stylesheet" href="{% static '/bulma-css/bulma.min.css' %}" type="text/css">  
-    <link rel='stylesheet' type='text/css' href="css/modules.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- <link rel="stylesheet" href="{% static '/css/main.css' %}" type="text/css">  -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -24,6 +21,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/66634f6c24.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <nav class="navbar" role="navigation" aria-label="main navigation">
         <!-- navbar-brand = top-left navbar component -->
@@ -53,28 +51,17 @@
                     Download Whitepaper
                 </a> -->
                 <a class="navbar-item" href="{% url 'about' %}">About</a>
+                <a class="navbar-item" href="{% url 'login' %}">Login</a>
+                <a class="navbar-item" href="{% url 'signup' %}">Get Started</a>
             </div>
         </div>
     </nav>
-    <title>Modules</title>
-    <div class="subject-container">
-        
-        <div class="subject-card">
-            <a href="{% url 'arithmetic' %}">Arithmetic</a>
-        </div>
-
-        <ul class="parent-container">
-            <li class="arithmetic-link child-item"></li>
-            <li class="algebra-link child-item"><a href="#">Algebra</a></li>
-            <li class="geometry-link child-item"><a href="#">Geometry</a></li>
-            <li class="precalc-link child-item"><a href="#">Precalculus</a></li>
-            <li class="calc-link child-item"><a href="#">Calculus</a></li>
-        </ul>
-
-        <!-- algebra, precalc, geometry, calculus -->
-    </div>
-    <!-- render each category in modules as box, same style as tutor_portals -->
-    <!-- CSS grid / flexbox containers for rendering boxes for each category (modules.html) -->
-
+    <div class="container">
+        <div class="field">
+            <h1 class="title is-1 has-text-centered is-spaced" id="berri-heading">Welcome to Berri</h1>
+            <h3 class="subtitle is-3 has-text-centered is-spaced" id="berri-description">Berri is an intelligent memory retention tool for mathematical problem-solving, or in other words, the missing half of Brainscape and Khan Academy.</h3>
+        </div>  
+        <!-- features, footer (privacy policy, feedback, contact (project email), whitepaper) -->
+    </div> 
 </body>
 </html>
