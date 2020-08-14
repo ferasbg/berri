@@ -83,16 +83,17 @@ def benchmark_test(request, *args, **kwargs):
     if request.method == 'GET':
         # get time when user makes GET request to `/benchmark_test`
         startTime = datetime.datetime.now()
+        print("starting timer for benchmark_exam...")
+
         # get time when user finishes last question 
         with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
             data = json.loads(f.read(), strict=False)
             print(data)
-            startTime = datetime.datetime.now()
-            print("starting timer for benchmark_exam...")
-
             # when we make dataframe.insert to pandas.dataframe, we will then convert to python dict every time we need to index / search for key value
             q10 = data["questions"]["question_10"]["problem_completion"]
             print(q10)
+        
+        
         # pass multiple choice form to views django from arithmetic.html (check user_answer_choice after storing to pandas.datafranme)
         if request.method == 'POST':
             with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:

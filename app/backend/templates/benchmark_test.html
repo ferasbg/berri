@@ -128,9 +128,24 @@
             <h1 class="title is-1 has-text-centered is-spaced" id="berri-heading">Benchmark Test</h1>
         </div>  
 
+        <div class="tabs">
+          <button onclick="  ">Question 1</button>
+          <button>Question 2</button>
+          <button>Question 3</button>
+          <button>Question 4</button>
+          <button>Question 5</button>
+          <button>Question 6</button>
+          <button>Question 7</button>
+          <button>Question 8</button>
+          <button>Question 9</button>
+          <button>Question 10</button>
+        </div>
+
         <div class="field">
-          <h3>$$ 1. {% firstof question_1 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate>
+          <div class="q-container" style="display:none" id="question_1">
+            <h3>$$ 1. {% firstof question_1 %} $$</h3>
+            {% comment %} action={% firstof 'user_answer_choice' %} {% endcomment %}
+             <form onsubmit="submitQ()" enctype="multipart/form-data" novalidate> 
               {% csrf_token %}
               <ul>
                   <li><input type="checkbox">1. $${% firstof q1_choices_a %}$$</li>
@@ -145,10 +160,12 @@
             <div class="field">
               <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
             </div>
+          </div>
             <!-- whatever the string we get, we will pass this straight to python dict, then store in pandas.dataframe -->
 
-          <h3>$$ 2. {% firstof question_2 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate style="display:none">
+          <div class="q-container" style="display:none" id="question_2">
+            <h3>$$ 2. {% firstof question_2 %} $$</h3>
+            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate>
               {% csrf_token %}
               <ul>
                   <li><input type="checkbox">1. $${% firstof q2_choices_a %}$$</li>
@@ -159,22 +176,32 @@
               </ul>
               <button class="submit" type="submit">Submit</button>
             </form>
+            <div class="field">
+              <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
+            </div>
+          </div>
 
-          <h3>$$ 3. {% firstof question_3 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate style="display:none">
-              {% csrf_token %}
-              <ul>
-                  <li><input type="checkbox">1. $${% firstof q3_choices_a %}$$</li>
-                  <li><input type="checkbox">2. $${% firstof q3_choices_b %}$$</li>
-                  <li><input type="checkbox">3. $${% firstof q3_choices_c %}$$</li>
-                  <li><input type="checkbox">4. $${% firstof q3_choices_d %}$$</li>
+          <div class="q-container" style="display:none" id="question_3">
+            <h3>$$ 3. {% firstof question_3 %} $$</h3>
+              <form action="{% firstof 'user_answer_choice' %}" method="post" enctype="multipart/form-data" novalidate>
+                {% csrf_token %}
+                <ul>
+                    <li><input type="checkbox">1. $${% firstof q3_choices_a %}$$</li>
+                    <li><input type="checkbox">2. $${% firstof q3_choices_b %}$$</li>
+                    <li><input type="checkbox">3. $${% firstof q3_choices_c %}$$</li>
+                    <li><input type="checkbox">4. $${% firstof q3_choices_d %}$$</li>
 
-              </ul>
-              <button class="submit" type="submit">Submit</button>
-            </form>
+                </ul>
+                <button class="submit" type="submit">Submit</button>
+              </form>
+              <div class="field">
+                <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
+              </div>
+          </div>
 
-          <h3>$$ 4. {% firstof question_4 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate style="display:none">
+          <div class="q-container" style="display:none" id="question_4">
+            <h3>$$ 4. {% firstof question_4 %} $$</h3>
+            <form action="{% firstof 'user_answer_choice' %}" method="post" enctype="multipart/form-data" novalidate>
               {% csrf_token %}
               <ul>
                   <li><input type="checkbox">1. $${% firstof q4_choices_a %}$$</li>
@@ -185,9 +212,14 @@
               </ul>
               <button class="submit" type="submit">Submit</button>
             </form>
+            <div class="field">
+              <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
+            </div>
+          </div>
 
-          <h3>$$ 5. {% firstof question_5 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate style="display:none">
+          <div class="q-container" style="display:none" id="question_5">
+            <h3>$$ 5. {% firstof question_5 %} $$</h3>
+            <form action="{% firstof 'user_answer_choice' %}" method="post" enctype="multipart/form-data" novalidate>
               {% csrf_token %}
               <ul>
                   <li><input type="checkbox">1. $${% firstof q5_choices_a %}$$</li>
@@ -198,9 +230,14 @@
               </ul>
               <button class="submit" type="submit">Submit</button>
             </form>
+            <div class="field">
+              <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
+            </div>
+          </div>
 
-          <h3>$$ 6. {% firstof question_6 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate style="display:none">
+          <div class="q-container" style="display:none" id="question_6">
+            <h3>$$ 6. {% firstof question_6 %} $$</h3>
+            <form action="{% firstof 'user_answer_choice' %}" method="post" enctype="multipart/form-data" novalidate>
               {% csrf_token %}
               <ul>
                   <li><input type="checkbox">1. $${% firstof q6_choices_a %}$$</li>
@@ -211,9 +248,14 @@
               </ul>
               <button class="submit" type="submit">Submit</button>
             </form>
+            <div class="field">
+              <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
+            </div>
+          </div>
 
-          <h3>$$ 7. {% firstof question_7 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate style="display:none">
+          <div class="q-container" style="display:none" id="question_7">
+            <h3>$$ 7. {% firstof question_7 %} $$</h3>
+            <form action="{% firstof 'user_answer_choice' %}" method="post" enctype="multipart/form-data" novalidate>
               {% csrf_token %}
               <ul>
                   <li><input type="checkbox">1. $${% firstof q7_choices_a %}$$</li>
@@ -224,9 +266,14 @@
               </ul>
               <button class="submit" type="submit">Submit</button>
             </form>
+            <div class="field">
+              <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
+            </div>
+          </div>
 
-          <h3>$$ 8. {% firstof question_8 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate style="display:none">
+          <div class="q-container" style="display:none" id="question_8">
+            <h3>$$ 8. {% firstof question_8 %} $$</h3>
+            <form action="{% firstof 'user_answer_choice' %}" method="post" enctype="multipart/form-data" novalidate>
               {% csrf_token %}
               <ul>
                   <li><input type="checkbox">1. $${% firstof q8_choices_a %}$$</li>
@@ -237,9 +284,14 @@
               </ul>
               <button class="submit" type="submit">Submit</button>
             </form>
+            <div class="field">
+              <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
+            </div>
+          </div>
 
-          <h3>$$ 9. {% firstof question_9 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate style="display:none">
+          <div class="q-container" style="display:none" id="question_9">
+            <h3>$$ 9. {% firstof question_9 %} $$</h3>
+            <form action="{% firstof 'user_answer_choice' %}" method="post" enctype="multipart/form-data" novalidate>
               {% csrf_token %}
               <ul>
                   <li><input type="checkbox">1. $${% firstof q9_choices_a %}$$</li>
@@ -250,26 +302,45 @@
               </ul>
               <button class="submit" type="submit">Submit</button>
             </form>
+            <div class="field">
+              <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
+            </div>
+          </div>
 
+        <div class="q-container" style="display:none" id="question_10">
           <h3>$$ 10. {% firstof question_10 %} $$</h3>
-            <form action={% firstof 'user_answer_choice' %} method="post" enctype="multipart/form-data" novalidate style="display:none">
-              {% csrf_token %}
-              <ul>
-                  <li><input type="checkbox">1. $${% firstof q10_choices_a %}$$</li>
-                  <li><input type="checkbox">2. $${% firstof q10_choices_b %}$$</li>
-                  <li><input type="checkbox">3. $${% firstof q10_choices_c %}$$</li>
-                  <li><input type="checkbox">4. $${% firstof q10_choices_d %}$$</li>
+          <form action="{% firstof 'user_answer_choice' %}" method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+            <ul>
+                <li><input type="checkbox">1. $${% firstof q10_choices_a %}$$</li>
+                <li><input type="checkbox">2. $${% firstof q10_choices_b %}$$</li>
+                <li><input type="checkbox">3. $${% firstof q10_choices_c %}$$</li>
+                <li><input type="checkbox">4. $${% firstof q10_choices_d %}$$</li>
 
-              </ul>
-              <button class="submit" type="submit">Submit</button>
-            </form>
-
+            </ul>
+            <button class="submit" type="submit">Submit</button>
+          </form>
             <div class="field">
               <a href="{% url 'tutors' %}">Click to Save for Tutor!</a>
             </div>
         </div>
+      </div>
 
         <!-- features, footer (privacy policy, feedback, contact (project email), whitepaper) -->
     </div> 
 </body>
+
+<script>
+
+const submitQ = (() => {
+  console.log('here');
+});
+
+const changeQ = ((num) => {
+  let id = 'question_' + num;
+  document.getElementById(id).style.display = 'block';
+})
+
+</script>
+
 </html>

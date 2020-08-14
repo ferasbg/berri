@@ -85,28 +85,29 @@ with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf
 
 
 if request.method == 'GET':
-# get time when user makes GET request to `/benchmark_test`
-startTime = datetime.datetime.now()
-# get time when user finishes last question 
-with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
-data = json.loads(f.read(), strict=False)
-print(data)
-startTime = datetime.datetime.now()
-print("starting timer for benchmark_exam...")
+    # get time when user makes GET request to `/benchmark_test`
+    startTime = datetime.datetime.now()
+    print("starting timer for benchmark_exam...")
 
-# when we make dataframe.insert to pandas.dataframe, we will then convert to python dict every time we need to index / search for key value
-q10 = data["questions"]["question_10"]["problem_completion"]
-print(q10)
+    # get time when user finishes last question 
+    with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+        data = json.loads(f.read(), strict=False)
+        print(data)
+        # when we make dataframe.insert to pandas.dataframe, we will then convert to python dict every time we need to index / search for key value
+        q10 = data["questions"]["question_10"]["problem_completion"]
+        print(q10)
 
 
 # pass multiple choice form to views django from arithmetic.html (check user_answer_choice after storing to pandas.datafranme)
 with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
     # read in our JSON objects that were converted from pandas.dataframe to add insertions based on indexing
     data = json.loads(f.read(), strict=False)
-form = QuestionForm(request.POST)
-if form.is_valid()
+
+# check for multiple choice (user input) passed from template
+if form.is_valid():
+    form = QuestionForm(request.POST)
     user_answer_choice = request.POST['user_answer_choice']
-    # check for if it matches with correct_choice
+    # check for if it matches with correct_choice (question 1)
         if data["questions"]["question_1"]["user_answer_choice"] == data["questions"]["question_1"]["correct_choice"]:
         print("hello")
         # add new key / value pair to the JSON dict
