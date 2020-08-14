@@ -1,0 +1,1 @@
+// store jquery, ajax, and other javascript necessary to optimize frontend

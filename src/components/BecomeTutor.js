@@ -1,5 +1,9 @@
 
 import React from 'react';
+<<<<<<< HEAD
+=======
+import "./style.module.css"
+>>>>>>> POC-1
 
 export default class BecomeTutor extends React.Component {
 
