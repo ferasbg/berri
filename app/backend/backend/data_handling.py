@@ -9,9 +9,11 @@ import base64
 from collections import namedtuple, OrderedDict, defaultdict
 import io
 import pandas
+import datetime
+from datetime import datetime
 import pandas as pd
 import nested_lookup
-from nested_lookup import nested_lookup
+from nested_lookup import nested_lookup # use for counting accuracy_instance_count over all questions, counting total problem_completion for all questions
 import sqlite3
 # pandas.dataframe --> JSON --> python dict
 # store JSON with pandas.dataFrame(), vice versa 
@@ -22,22 +24,22 @@ import sqlite3
 
 
 # wrap properly in function when refactoring for views (access normalized JSON to retrieve JSON objects)
-with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
-    # store as JSON object
-    data = json.loads(f.read(), strict=False)
-    # store JSON as pandas.dataframe
-    data = pd.DataFrame(data)
-    # display entire dataframe
-    pd.set_option('display.max_colwidth', None)
-    # normalize / flatten nested JSON in dataframe (parent_node=["questions"]), also need to set path for each question_number (1-n)
-    problems_df = pd.json_normalize(data["questions"])
-    print(problems_df)
+# with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+#     # store as JSON object
+#     data = json.loads(f.read(), strict=False)
+#     # store JSON as pandas.dataframe
+#     data = pd.DataFrame(data)
+#     # display entire dataframe
+#     pd.set_option('display.max_colwidth', None)
+#     # normalize / flatten nested JSON in dataframe (parent_node=["questions"]), also need to set path for each question_number (1-n)
+#     problems_df = pd.json_normalize(data["questions"])
+#     print(problems_df)
 
-    # we need to store the nested JSON (choices) as it's own dataframe
-    choices_data = pd.json_normalize(data=data['questions'], record_path=['choices'])
-    choices_df = choices_data.head()
-    pd.set_option('display.max_colwidth', None)
-    print(choices_df)
+#     # we need to store the nested JSON (choices) as it's own dataframe
+#     choices_data = pd.json_normalize(data=data['questions'], record_path=['choices'])
+#     choices_df = choices_data.head()
+#     pd.set_option('display.max_colwidth', None)
+#     print(choices_df)
 
     # convert JSON objects['questions.question_number.question', 'questions.question_number.choices'] into python dicts because we are pulling these two name / value pairs to be rendered in base template 
     
@@ -46,7 +48,27 @@ with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf
     # print(problems_dict)
 
 
-# hit JSON to get python dict, but ONLY read to pandas.dataframe to add insertions
+with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+    data = json.loads(f.read(), strict=False)
+    print(data)
+    startTime = datetime.now()
+    print("starting timer for benchmark_exam...")
+
+# when we make dataframe.insert to pandas.dataframe, we will then convert to python dict every time we need to index / search for key value
+q10 = data["questions"]["question_10"]["problem_completion"]
+print(q10)
+
+# check for question 10 problem_completion 
+if q10 == "True":
+    endTime = datetime.now()
+    session_time = endTime - startTime
+    # pass session_time to be stored in JSON key value (search and insert key value in dict), then store in pandas.dataframe
+    insert_session_time = data["questions"]["question_10"]["session_time"]
+    # convert session_time to string
+    session_time = str(session_time)
+    # update session_time with calculated session_time
+    data["questions"]["question_10"]["session_time"] = session_time 
+    print(session_time)
 
 with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
     # store as JSON object
@@ -56,21 +78,37 @@ with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf
     # search for dict that matches question_1.question['value'] and return as string
     question_value = questions_dict["questions"]["question_1"]["question"]
     q1_choices_a = questions_dict["questions"]["question_1"]["choices"][0]["a"]
-    q1_string_a = str(q1_choices_a)
-    print(q1_string_a)
-    
-    # pass question_value into django template
+    q1_choices_b = questions_dict["questions"]["question_1"]["choices"][0]["b"]
 
-    
-
-    # for interation loop defined in views.py, based on specific instance, make changes to pandas.dataframe
-    # python dictionary must be rendered in base template  
-    # store python dict in variable and then do dict lookup and then render the output
-    # pass {{ mydict.questions.question_1.question }} in question_1 tab in arithmetic.html
-    # convert python dict for each question ,tring to be rendered in django template with {{ problems_dict.get(questions.question_number.question[value]) }}
-    
- 
- 
+# update the nested value in key / value pair for problem_completion given that the user has submitted the form 
 
 
 
+if request.method == 'GET':
+# get time when user makes GET request to `/benchmark_test`
+startTime = datetime.datetime.now()
+# get time when user finishes last question 
+with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+data = json.loads(f.read(), strict=False)
+print(data)
+startTime = datetime.datetime.now()
+print("starting timer for benchmark_exam...")
+
+# when we make dataframe.insert to pandas.dataframe, we will then convert to python dict every time we need to index / search for key value
+q10 = data["questions"]["question_10"]["problem_completion"]
+print(q10)
+
+
+# pass multiple choice form to views django from arithmetic.html (check user_answer_choice after storing to pandas.datafranme)
+with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+    # read in our JSON objects that were converted from pandas.dataframe to add insertions based on indexing
+    data = json.loads(f.read(), strict=False)
+form = QuestionForm(request.POST)
+if form.is_valid()
+    user_answer_choice = request.POST['user_answer_choice']
+    # check for if it matches with correct_choice
+        if data["questions"]["question_1"]["user_answer_choice"] == data["questions"]["question_1"]["correct_choice"]:
+        print("hello")
+        # add new key / value pair to the JSON dict
+        accuracy_instance_count = 0
+        accuracy_instance_count += 1

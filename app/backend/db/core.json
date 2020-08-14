@@ -17,7 +17,9 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool",
+            "problem_completion": "Bool"
         },
 
         "question_2": {
@@ -37,7 +39,9 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool",
+            "problem_completion": "Bool"
 
             
         },
@@ -59,8 +63,9 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
-
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool",
+            "problem_completion": "Bool"
             
         },
 
@@ -81,7 +86,8 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool"
 
             
         },
@@ -103,7 +109,9 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool",
+            "problem_completion": "Bool"
 
         },
         "question_6": {
@@ -123,7 +131,10 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool",
+            "problem_completion": "Bool"
+
             
         },
 
@@ -144,7 +155,10 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool",
+            "problem_completion": "Bool"
+
 
         },
 
@@ -165,7 +179,10 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool",
+            "problem_completion": "Bool"
+
 
             
         },
@@ -187,7 +204,10 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool",
+            "problem_completion": "Bool"
+
 
         },
 
@@ -208,7 +228,10 @@
             "category": "Arithmetic",
             "startTime": "time_value",
             "endTime": "time_value",
-            "session_time": "time_value"
+            "session_time": "time_value",
+            "saved_for_tutor": "Bool",
+            "problem_completion": "True"
+
         }
     }
 }

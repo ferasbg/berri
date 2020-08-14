@@ -122,9 +122,33 @@
         </div>
     </div>
   </nav>
+  <!-- we need to have benchmark test, and practice test as two boxes  -->
   <h1 class="title is-3">Arithmetic</h1>
-  <!-- pass python dict to be rendered in template -->
-  <!-- pass question 1-10, setup tabs in frontend -->
+  <div class="flex-container">
+    <ul class="problem_sets">
+      <li><a class="flex-item" href="{% url 'benchmark_test' %}">Phase I: Benchmark Test</a></li>
+      <li><a class="flex-item" href="{% url 'practice_test' %}">Phase II: Practice Test</a></li>
+    </ul>
+  </div>
+
+  {% comment %} <div class="subtitle" role="tab">
+    <!-- model for each question, need to store what user selected and then read the key value for their answer_choice (to see if it matches with correct_choice) -->
+    <ul class="question-choices">
+      <li class="choice_a"><p>$${% firstof q1_a %}$$</p></li>
+    </ul>
+    <button onclick="this.submitAnswerChoice('a')">a)$${% firstof q1_a %}$$</button>
+    <button onclick="this.submitAnswerChoice('b')" >b)$${% firstof q1_b %}$$</button>
+    <button onclick="this.submitAnswerChoice('c')" >c)$${% firstof q1_c %}$$</button>
+    <button onclick="this.submitAnswerChoice('d')" >d)$${% firstof q1_d %}$$</button>
+  </div>  {% endcomment %}
+
+  <script>
+    const submitAnswerChoice = (char, qid => {
+      // search for question based on id and check if char = correct_choice
+    });
+  </script>
+    
+  <!--  -->
   
   <p>$${% firstof question_1 %}$$</p>
   <!-- dictionary lookup in django template tag  -->
