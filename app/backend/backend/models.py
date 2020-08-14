@@ -4,11 +4,6 @@ from django.conf import settings
 from datetime import datetime
 import time
 from jsonfield import JSONField
-# we need to define our JSON objects to be properly serialized when we render it server-side
-# but for now, we can pull JSON objects by directly reading to pandas.dataframe() and pulling dicts (key/values) and rendering those numbers / equations with KaTeX
-# define models in order to store logic for how data must be serialized to derive from
-# must run `python manage.py makemigrations model_name` to store changes in models
-
 
 class User(models.Model):
     name = models.CharField(max_length=100)
@@ -23,6 +18,7 @@ class Modules(models.Model):
     question = models.CharField(max_length=500)
     # store choices as JSON, but converted when rendered in django template
     choices = JSONField()
+    saved_for_tutor = models.BooleanField()
     user_answer_choice = models.CharField(max_length=1)
     user = models.CharField(max_length=100)
     start_time = models.DateField()
@@ -41,6 +37,5 @@ class Modules(models.Model):
     # track number of correctly solved answer choices
     accuracy_instance_count = models.IntegerField()
     est_mastery_time = models.TimeField()
-    performance_metrics = models.IntegerField()
 
 # setup viewsets, APIviews, serializers, queryset / serializer_classes / permission_classes

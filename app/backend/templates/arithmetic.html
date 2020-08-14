@@ -112,7 +112,7 @@
             <a class="navbar-item" href="{% url 'tutors' %}">
                 Find Tutors
             </a>
-            <a class="navbar-item" href="{% url 'multiplayer'}">Join Game</a>
+            <a class="navbar-item" href="{% url 'multiplayer' %}">Join Game</a>
         </div>
         <!-- <div class="navbar-end">
             <a class="navbar-item" href="{url 'https://github.com/RomirS/Berri/blob/POC-1/README.md'}">
@@ -126,7 +126,7 @@
   <!-- pass python dict to be rendered in template -->
   <!-- pass question 1-10, setup tabs in frontend -->
   
-  <p>$${% firstof question_value %}$$</p>
+  <p>$${% firstof question_1 %}$$</p>
   <!-- dictionary lookup in django template tag  -->
   <!-- <p>When $a \ne 0$, there are two solutions to \(ax^2 + bx + c = 0\) and  
     they are
@@ -141,7 +141,3 @@
 <!-- track session_time with startTime on instance of GET request, and when the last question gets submitted -->
 <!-- will have to display datetime.datetime.now() for multiplayer -->
 
-<!-- setup sqlite with pandas dataframe -->
-<!-- setup routes with templates by looking at folder structure of avon -->
-<!-- convert JSON to dict object, render in html template -->
-<!-- pass user form response (in the form of multiple choice) and match correct answer choice with given ['correct_choice'] -->

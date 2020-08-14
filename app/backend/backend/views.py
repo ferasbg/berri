@@ -29,13 +29,19 @@ from collections import namedtuple, OrderedDict, defaultdict
 
 # db
 import sqlite3
+import pyrebase
 
 # landing page
 def index(request):
     return render(request, "index.html")
 
 def login(request):
+    # functions to handle react components
     return render(request, "login.html")
+
+def signup(request):
+    # functions to handle react components
+    return render(request, "signup.html")
 
 # modules
 def modules(request):
@@ -45,6 +51,7 @@ def tutors(request):
     return render(request, "tutors.html")
 
 def dashboard(request):
+    # pass in data stored in pandas.dataframe to python dict then use data viz / lib functions to render charts / graphs
     return render(request, "dashboard.html")
 
 def multiplayer(request):
@@ -55,6 +62,16 @@ def about(request):
 
 # modules/training (gateway for problem_sets) = render arithmetic.html
 def arithmetic(request):
+    if request.method = 'GET':
+        
+
+    #if request.method == 'GET':
+        # track startTime and mark endTime when user submits question 10 with datetime, calculate delta between endTime and startTime
+        # if statements for event instances
+            # save_for_tutor = save id based on save_for_tutor instance, and then index question that matches id
+            # database insertions to pandas.dataframe with pandas.dataframe.apply() = user_xp, est_mastery_time, confidence_score, saved_for_tutor, problem_completion, user_accuracy_instance_count
+        # store db insertions in pandas.dataframe
+
     with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
         # store as JSON object
         data = json.loads(f.read(), strict=False)
@@ -75,26 +92,87 @@ def arithmetic(request):
     with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
         # store as JSON object
         questions_dict = json.loads(f.read(), strict=False) 
-        # search for dict that matches question_1.question['value'] and return as string
-        question_value = questions_dict["questions"]["question_1"]["question"]
+        # store each question_value indexed from dict (retrieve questions, and choices)
+        question_1 = questions_dict["questions"]["question_1"]["question"]
+        question_2 = questions_dict["questions"]["question_2"]["question"]
+        question_3 = questions_dict["questions"]["question_3"]["question"]
+        question_4 = questions_dict["questions"]["question_4"]["question"]
+        question_5 = questions_dict["questions"]["question_5"]["question"]
+        question_6 = questions_dict["questions"]["question_6"]["question"]
+        question_7 = questions_dict["questions"]["question_7"]["question"]
+        question_8 = questions_dict["questions"]["question_8"]["question"]
+        question_9 = questions_dict["questions"]["question_9"]["question"]
+        question_10 = questions_dict["questions"]["question_10"]["question"]
+
+    # get all answer choices
+    with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
+        # store as JSON object
+        questions_dict = json.loads(f.read(), strict=False) 
+
+        
+        # question_1
+        # template tag: {{% firstof question_number_choice = object that stores each integer %}}
+        q1_choices_a = questions_dict["questions"]["question_1"]["choices"][0]["a"]
+        q1_choices_b = questions_dict["questions"]["question_1"]["choices"][1]["b"]
+        q1_choices_c = questions_dict["questions"]["question_1"]["choices"][2]["c"]
+        q1_choices_d = questions_dict["questions"]["question_1"]["choices"][3]["d"]
+
+        # question_2
+        q2_choices_a = questions_dict["questions"]["question_2"]["choices"][0]["a"]
+        q2_choices_b = questions_dict["questions"]["question_2"]["choices"][1]["b"]
+        q2_choices_c = questions_dict["questions"]["question_2"]["choices"][2]["c"]
+        q2_choices_d = questions_dict["questions"]["question_2"]["choices"][3]["d"]
+
+        # question_3
+        q3_choices_a = questions_dict["questions"]["question_3"]["choices"][0]["a"]
+        q3_choices_b = questions_dict["questions"]["question_3"]["choices"][1]["b"]
+        q3_choices_c = questions_dict["questions"]["question_3"]["choices"][2]["b"]
+        q3_choices_d = questions_dict["questions"]["question_3"]["choices"][3]["b"]
+
+        # question_4
+        q4_choices_a = questions_dict["questions"]["question_4"]["choices"][0]["a"]
+        q4_choices_b = questions_dict["questions"]["question_4"]["choices"][1]["b"]
+        q4_choices_c = questions_dict["questions"]["question_4"]["choices"][2]["b"]
+        q4_choices_d = questions_dict["questions"]["question_4"]["choices"][3]["b"]
+
+        # question_5
+        q5_choices_a = questions_dict["questions"]["question_5"]["choices"][0]["a"]
+        q5_choices_b = questions_dict["questions"]["question_5"]["choices"][1]["b"]
+        q5_choices_c = questions_dict["questions"]["question_5"]["choices"][2]["b"]
+        q5_choices_d = questions_dict["questions"]["question_5"]["choices"][3]["b"]
+
+        # question_6
+        q6_choices_a = questions_dict["questions"]["question_6"]["choices"][0]["a"]
+        q6_choices_b = questions_dict["questions"]["question_6"]["choices"][1]["b"]
+        q6_choices_c = questions_dict["questions"]["question_6"]["choices"][2]["b"]
+        q6_choices_d = questions_dict["questions"]["question_6"]["choices"][3]["b"]
+
+        # question_7
+        q7_choices_a = questions_dict["questions"]["question_7"]["choices"][0]["a"]
+        q7_choices_b = questions_dict["questions"]["question_7"]["choices"][1]["b"]
+        q7_choices_c = questions_dict["questions"]["question_7"]["choices"][2]["b"]
+        q7_choices_d = questions_dict["questions"]["question_7"]["choices"][3]["b"]
+
+        # question_8
+        q8_choices_a = questions_dict["questions"]["question_8"]["choices"][0]["a"]
+        q8_choices_b = questions_dict["questions"]["question_8"]["choices"][1]["b"]
+        q8_choices_c = questions_dict["questions"]["question_8"]["choices"][2]["b"]
+        q8_choices_d = questions_dict["questions"]["question_8"]["choices"][3]["b"]
+
+        # question_9
+        q9_choices_a = questions_dict["questions"]["question_9"]["choices"][0]["a"]
+        q9_choices_b = questions_dict["questions"]["question_9"]["choices"][1]["b"]
+        q9_choices_c = questions_dict["questions"]["question_9"]["choices"][2]["b"]
+        q9_choices_d = questions_dict["questions"]["question_9"]["choices"][3]["b"]
+
+        # question_10
+        q10_choices_a = questions_dict["questions"]["question_10"]["choices"][0]["a"]
+        q10_choices_b = questions_dict["questions"]["question_10"]["choices"][1]["b"]
+        q10_choices_c = questions_dict["questions"]["question_10"]["choices"][2]["b"]
+        q10_choices_d = questions_dict["questions"]["question_10"]["choices"][3]["b"]
+
+    return render(request, "arithmetic.html", {'question_1': question_1, 'question_2': question_2, 'question_3': question_3, 'question_4': question_4, 'question_5': question_5, 'question_6': question_6, 'question_7': question_7, 'question_8': question_8, 'question_9': question_9, 'question_10': question_10}, {})
     
-    return render(request, "arithmetic.html", {'question_value': question_value})
-    # perform all computations given instance of GET request 
-        # retrieve questions, and choices
-        
-        # startTime=TRUE (start time to track session_time)
-        
-        # make api request to pandas to access dataframe to get dict for questions, return=1
-
-        # render latex equations from JSON strings that had been converted from mathjax
-
-        # store JSON in pandas.dataframe, then store pandas.dataframe in SQLite
-
-        # to add confidence_score && user_xp, use pandas.DataFrame.apply()
-
-
-
-        # pull from JSON objects stored as python dicts
 
 
 

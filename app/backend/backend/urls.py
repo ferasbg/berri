@@ -22,7 +22,9 @@ urlpatterns = [
     path('tutors/', views.tutors, name='tutors'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('multiplayer/', views.multiplayer, name='multiplayer'),
-    path('about/', views.about, name='about')
+    path('about/', views.about, name='about'),
+    path('login/', views.login, name='login'),
+    path('signup/', views.signup, name='signup')
     # path('admin/', admin.site.urls)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

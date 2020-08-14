@@ -50,11 +50,13 @@ with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf
 
 with open('/home/ferasbg/projects/Berri/app/backend/db/core.json', encoding="utf8") as f:
     # store as JSON object
-    questions_dict = json.loads(f.read(), strict=False) 
+    questions_dict = json.loads(f.read(), strict=False)
+    print(questions_dict) 
     # search for question['value'] for each question stored in nested python dict to render as string
     # search for dict that matches question_1.question['value'] and return as string
     question_value = questions_dict["questions"]["question_1"]["question"]
-    print(question_value)
+    q1_choices = questions_dict["questions"]["question_1"]["choices"][0]["a"]
+    print(q1_choices)
     # pass question_value into django template
 
 
