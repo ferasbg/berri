@@ -5,10 +5,12 @@
     A personalized memory-retention tool for mathematical problem-solving. Or in other words, the missing half of Brainscape. 
 </h4> 
 
-## User Interface
+
 <div align="center">
   <img src="https://github.com/ferasbg/berri/blob/react-POC/app/backend/backend/static/assets/media/berri_landing_page.png" width="800" align="center">
 </div>
+
+## User Interface
 - implement core game design principles that primarily optimize for maintaining user flow during a state of solving math problems
 - optimize for recurrent feedback loops for user's learning and performance metrics to maintain engagement in respect to frictionless app usability
 - maximize data visibility and user retention to optimize user / student performance metrics, and further optimize confidence-based-repetition algorithm, similar to [Brainscape's Confidence-Based Repetition Algorithm](https://www.brainscape.com/blog/2010/01/confidence-based-repetition-cbr/), but in respect to optimizing for algorithm-style questions that apply to mathematics.
