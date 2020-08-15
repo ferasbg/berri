@@ -129,16 +129,16 @@
         </div>  
 
         <div class="tabs">
-          <button onclick="  ">Question 1</button>
-          <button>Question 2</button>
-          <button>Question 3</button>
-          <button>Question 4</button>
-          <button>Question 5</button>
-          <button>Question 6</button>
-          <button>Question 7</button>
-          <button>Question 8</button>
-          <button>Question 9</button>
-          <button>Question 10</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_1').style.display = 'block';} ">Question 1</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_2').style.display = 'block';} ">Question 2</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_3').style.display = 'block';} ">Question 3</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_4').style.display = 'block';} ">Question 4</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_5').style.display = 'block';} ">Question 5</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_6').style.display = 'block';} ">Question 6</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_7').style.display = 'block';} ">Question 7</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_8').style.display = 'block';} ">Question 8</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_9').style.display = 'block';} ">Question 9</button>
+          <button onclick="let questions = document.getElementsByClassName('q-container'); for(var x=0; x < questions.length; x++) { questions[x].style.display = 'none'; document.getElementById('question_10').style.display = 'block';} ">Question 10</button>
         </div>
 
         <div class="field">
@@ -332,14 +332,18 @@
 
 <script>
 
-const submitQ = (() => {
-  console.log('here');
-});
+  const submitQ = (() => {
+    console.log('here');
+  });
 
-const changeQ = ((num) => {
-  let id = 'question_' + num;
-  document.getElementById(id).style.display = 'block';
-})
+  const changeQ = ((num) => {
+    console.log('here');
+    document.getElementsByClassName("q-container").forEach((elem) => {
+      elem.style.display = 'none';
+    });
+    let id = 'question_' + num;
+    document.getElementById(id).style.display = 'block';
+  })
 
 </script>
 
