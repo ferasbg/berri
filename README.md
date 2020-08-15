@@ -5,7 +5,6 @@
     A personalized memory-retention tool for mathematical problem-solving.
 </h5> 
 
-
 <div align="center">
   <img src="https://github.com/ferasbg/berri/blob/react-POC/app/backend/backend/static/assets/media/berri.png" width="800" align="center">
 </div>
@@ -13,7 +12,7 @@
 ## User Interface
 - implement core game design principles that primarily optimize for maintaining user flow during a state of solving math problems
 - optimize for recurrent feedback loops for user's learning and performance metrics to maintain engagement in respect to frictionless app usability
-- maximize data visibility and user retention to optimize user / student performance metrics, and further optimize confidence-based-repetition algorithm, similar to [Brainscape's Confidence-Based Repetition Algorithm](https://www.brainscape.com/blog/2010/01/confidence-based-repetition-cbr/), but in respect to optimizing for algorithm-style questions that apply to mathematics.
+- maximize data visibility and user retention to optimize user / student performance metrics, and further optimize internal algorithm assuming productionization and scale, similar to [Brainscape's Confidence-Based Repetition Algorithm](https://www.brainscape.com/blog/2010/01/confidence-based-repetition-cbr/), but in respect to optimizing for algorithm-style questions that apply to mathematics.
 
 ## Components
 
@@ -24,7 +23,7 @@
 
 
 ### `/modules`
-- store a comprehensive set of modules which can handle LaTeX equations for higher-level mathematics courses beyond high school
+- store a comprehensive set of subject categories which can handle LaTeX equations for higher-level mathematics courses beyond high school
 - Store problem sets that were hardcoded with a mixture of problems varied by difficulty
 - store confidence_scores given by the user for each problem they solve with respect to maintaining their flow without hitting maximum point of interruption that'd break their train of focus (attention span)
 - store `session_time`, `confidence_score` for each problem they solve, track `problem_completion`, `accuracy_instance_count` (number of questions they solve correctly in a problem set)
@@ -59,7 +58,7 @@
 
 ### Data Structures
 - Pandas.Dataframe
-- JSON
+- Nested JSON Objects 
 - Python Dictionary
 
 
