@@ -16,8 +16,7 @@
 
 ## Demonstration
 
-<iframe width="850" height="400" src="https://www.youtube.com/embed/MvUPZhfeqjU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+[![Berri Demonstration](https://github.com/ferasbg/berri/blob/react-POC/app/backend/backend/static/assets/media/berri_landing_page.png)](https://www.youtube.com/embed/MvUPZhfeqjU)
 
 ## Components
 
