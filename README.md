@@ -1,5 +1,5 @@
 <h1 align="center">
-    <img src="https://github.com/ferasbg/berri/blob/react-POC/app/backend/backend/static/assets/logo/berri.png" width="450"><br>Berri
+    <img src="https://github.com/ferasbg/berri/blob/react-POC/app/backend/backend/static/assets/logo/berri.png" width="150"><br>Berri
 </h1> 
 <h3 align="center">
     A personalized memory-retention tool for mathematical problem-solving.
@@ -16,7 +16,8 @@
 
 ## Demonstration
 <div align="center">
-  <img src="https://github.com/ferasbg/berri/blob/react-POC/app/backend/backend/static/assets/media/berri_demo.gif" width="800" align="center">
+  <iframe src="https://youtu.be/MvUPZhfeqjU"
+   width="800" height="400" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## Components
