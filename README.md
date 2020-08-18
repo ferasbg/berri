@@ -15,10 +15,8 @@
 - maximize data visibility and user retention to optimize user / student performance metrics, and further optimize internal algorithm assuming productionization and scale, similar to [Brainscape's Confidence-Based Repetition Algorithm](https://www.brainscape.com/blog/2010/01/confidence-based-repetition-cbr/), but in respect to optimizing for algorithm-style questions that apply to mathematics.
 
 ## Demonstration
-<div align="center">
-  <iframe src="https://youtu.be/MvUPZhfeqjU"
-   width="800" height="400" frameborder="0" allowfullscreen></iframe>
-</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MvUPZhfeqjU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Components
 
